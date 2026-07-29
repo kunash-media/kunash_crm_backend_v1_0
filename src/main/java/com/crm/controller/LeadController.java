@@ -59,7 +59,7 @@ public class LeadController {
     }
 
     // GET all with pagination
-    @GetMapping
+    @GetMapping("/all-leads")
     public ResponseEntity<Page<LeadResponseDto>> getAllLeads(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size) {
@@ -67,7 +67,7 @@ public class LeadController {
     }
 
     // DELETE (soft delete)
-    @DeleteMapping("/{leadPrimeId}")
+    @DeleteMapping("/delete-lead/{leadPrimeId}")
     public ResponseEntity<Void> deleteLead(@PathVariable Long leadPrimeId) {
         leadService.deleteLead(leadPrimeId);
         return ResponseEntity.noContent().build();
@@ -87,17 +87,30 @@ public class LeadController {
     }
 
     // Add a followup entry
-    @PostMapping("/{leadPrimeId}/followup")
+    @PostMapping("/add/{leadPrimeId}/followup")
     public ResponseEntity<LeadResponseDto> addFollowup(
             @PathVariable Long leadPrimeId,
             @RequestBody LeadFollowupRequestDto dto) {
         return ResponseEntity.ok(leadService.addFollowup(leadPrimeId, dto));
     }
 
-    // Get all followups of a lead
-    @GetMapping("/{leadPrimeId}/followup")
+    // Get all followups of a lead (with id + createdAt, for history display)
+    @GetMapping("/get-all/{leadPrimeId}/followup")
     public ResponseEntity<List<LeadFollowupRequestDto>> getFollowups(@PathVariable Long leadPrimeId) {
         return ResponseEntity.ok(leadService.getFollowups(leadPrimeId));
+    }
+
+    // Mark a lead as converted (won) — excludes it from the main pipeline table
+    @PatchMapping("/convert/{leadPrimeId}")
+    public ResponseEntity<LeadResponseDto> convertLead(@PathVariable Long leadPrimeId) {
+        return ResponseEntity.ok(leadService.convertLead(leadPrimeId));
+    }
+
+    // Bulk soft-delete
+    @DeleteMapping("/delete-bulk")
+    public ResponseEntity<Void> deleteBulk(@RequestBody List<Long> leadPrimeIds) {
+        leadService.deleteBulk(leadPrimeIds);
+        return ResponseEntity.noContent().build();
     }
 
     // Real-time duplicate check as user types/blurs the phone field.
@@ -109,6 +122,12 @@ public class LeadController {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(existing);
+    }
+
+    // Detailed followup history (id + createdAt) — used by the History overlay
+    @GetMapping("/history/{leadPrimeId}/followup")
+    public ResponseEntity<List<com.crm.dto.response.LeadFollowupResponseDto>> getFollowupHistory(@PathVariable Long leadPrimeId) {
+        return ResponseEntity.ok(leadService.getFollowupsDetailed(leadPrimeId));
     }
 
     // Add a followup entry

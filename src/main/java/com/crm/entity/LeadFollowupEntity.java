@@ -2,6 +2,7 @@ package com.crm.entity;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "lead_followup_entity")
@@ -23,6 +24,13 @@ public class LeadFollowupEntity {
 
     private Boolean deletedFollowup = false;
 
+    private java.time.LocalDateTime createdAt;
+
+    @jakarta.persistence.PrePersist
+    protected void onCreate() {
+        this.createdAt = java.time.LocalDateTime.now();
+    }
+
     public Long getFollowupPrimeId() { return followupPrimeId; }
     public void setFollowupPrimeId(Long followupPrimeId) { this.followupPrimeId = followupPrimeId; }
 
@@ -40,4 +48,12 @@ public class LeadFollowupEntity {
 
     public Boolean getDeletedFollowup() { return deletedFollowup; }
     public void setDeletedFollowup(Boolean deletedFollowup) { this.deletedFollowup = deletedFollowup; }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
 }

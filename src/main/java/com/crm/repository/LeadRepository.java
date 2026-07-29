@@ -31,4 +31,8 @@ public interface LeadRepository extends JpaRepository<LeadEntity, Long> {
 
     @Query("select l.phone from LeadEntity l where l.deletedLead = false and l.phone is not null")
     List<String> findAllActivePhones();
+
+    Page<LeadEntity> findByDeletedLeadFalseAndLeadConvertedFalse(Pageable pageable);
+
+    List<LeadEntity> findByLeadPrimeIdIn(List<Long> leadPrimeIds);
 }

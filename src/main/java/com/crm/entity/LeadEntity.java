@@ -3,6 +3,8 @@ package com.crm.entity;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "lead_entity")
@@ -49,7 +51,7 @@ public class LeadEntity {
     private LocalDateTime updatedAt;
 
     @OneToMany(mappedBy = "lead", cascade = CascadeType.ALL, orphanRemoval = true)
-    private java.util.List<LeadFollowupEntity> followups = new java.util.ArrayList<>();
+    private List<LeadFollowupEntity> followups = new ArrayList<>();
 
     @PrePersist
     protected void onCreate() {

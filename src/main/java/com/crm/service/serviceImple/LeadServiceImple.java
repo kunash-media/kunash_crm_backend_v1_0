@@ -2,6 +2,7 @@ package com.crm.service.serviceImple;
 
 import com.crm.dto.request.LeadFollowupRequestDto;
 import com.crm.dto.request.LeadRequestDto;
+import com.crm.dto.response.LeadFollowupResponseDto;
 import com.crm.dto.response.LeadResponseDto;
 import com.crm.entity.LeadEntity;
 import com.crm.entity.LeadFollowupEntity;
@@ -100,16 +101,34 @@ public class LeadServiceImple implements LeadService {
 
     @Override
     public Page<LeadResponseDto> getAllLeads(int page, int size) {
-        // auto page size increase: if requested page*size exceeds available records
-        // fall back to returning everything in a single page
         long total = leadRepository.count();
         int effectiveSize = size;
         if ((long) page * size >= total && total > 0) {
             effectiveSize = (int) Math.max(size, total);
         }
         Pageable pageable = PageRequest.of(0, Math.max(effectiveSize, 1));
-        Page<LeadEntity> pageResult = leadRepository.findByDeletedLeadFalse(pageable);
+        Page<LeadEntity> pageResult = leadRepository.findByDeletedLeadFalseAndLeadConvertedFalse(pageable);
         return pageResult.map(this::mapEntityToResponse);
+    }
+
+    @Override
+    @Transactional
+    public LeadResponseDto convertLead(Long leadPrimeId) {
+        LeadEntity entity = leadRepository.findByLeadPrimeIdAndDeletedLeadFalse(leadPrimeId)
+                .orElseThrow(() -> new RuntimeException("Lead not found with id: " + leadPrimeId));
+        entity.setLeadConverted(true);
+        leadRepository.save(entity);
+        return mapEntityToResponse(entity);
+    }
+
+    @Override
+    @Transactional
+    public void deleteBulk(List<Long> leadPrimeIds) {
+        List<LeadEntity> entities = leadRepository.findByLeadPrimeIdIn(leadPrimeIds);
+        for (LeadEntity e : entities) {
+            e.setDeletedLead(true);
+        }
+        leadRepository.saveAll(entities);
     }
 
     @Override
@@ -173,6 +192,22 @@ public class LeadServiceImple implements LeadService {
                 .collect(Collectors.toList());
     }
 
+
+    @Override
+    public List<LeadFollowupResponseDto> getFollowupsDetailed(Long leadPrimeId) {
+        return leadFollowupRepository.findByLead_LeadPrimeIdAndDeletedFollowupFalseOrderByFollowupDateDesc(leadPrimeId)
+                .stream()
+                .map(f -> {
+                    com.crm.dto.response.LeadFollowupResponseDto d = new com.crm.dto.response.LeadFollowupResponseDto();
+                    d.setFollowupPrimeId(f.getFollowupPrimeId());
+                    d.setFollowupDate(f.getFollowupDate());
+                    d.setFollowupStatus(f.getFollowupStatus());
+                    d.setFollowupNotes(f.getFollowupNotes());
+                    d.setCreatedAt(f.getCreatedAt());
+                    return d;
+                })
+                .collect(Collectors.toList());
+    }
     @Override
     @Transactional
     public LeadResponseDto updateFollowup(Long leadPrimeId, Long followupPrimeId, LeadFollowupRequestDto dto) {
@@ -310,6 +345,7 @@ public class LeadServiceImple implements LeadService {
         if (entity.getDocFile() != null && entity.getDocFile().length > 0) {
             res.setDocFileUrl("/api/lead/v1/" + entity.getLeadPrimeId() + "/docFile");
         }
+        res.setFollowupCount((int) leadFollowupRepository.countByLead_LeadPrimeIdAndDeletedFollowupFalse(entity.getLeadPrimeId()));
         res.setCreatedAt(entity.getCreatedAt());
         res.setUpdatedAt(entity.getUpdatedAt());
         return res;

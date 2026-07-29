@@ -1,607 +1,282 @@
-2026-07-28T00:47:05.379+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] com.crm.KunashCrmApplication             : Starting KunashCrmApplication using Java 24.0.2 with PID 8040 (C:\Kunash-CRM\kunash_crm_backend_v1_0\target\classes started by admim in C:\Kunash-CRM\kunash_crm_backend_v1_0)
-2026-07-28T00:47:05.383+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] com.crm.KunashCrmApplication             : No active profile set, falling back to 1 default profile: "default"
-2026-07-28T00:47:05.479+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\admim\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-common-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/annotations-13.0.jar
-2026-07-28T00:47:05.480+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-07-28T00:47:05.480+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-07-28T00:47:06.763+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-07-28T00:47:06.766+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2026-07-28T00:47:06.865+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crm.repository.LeadFollowupRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2026-07-28T00:47:06.869+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crm.repository.LeadRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2026-07-28T00:47:06.870+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 93 ms. Found 0 JDBC repository interfaces.
-2026-07-28T00:47:06.898+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-07-28T00:47:06.900+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-07-28T00:47:06.981+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 67 ms. Found 2 JPA repository interfaces.
-2026-07-28T00:47:07.819+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 6000 (http)
-2026-07-28T00:47:07.848+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-07-28T00:47:07.849+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
-2026-07-28T00:47:07.919+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2437 ms
-2026-07-28T00:47:08.256+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-07-28T00:47:08.364+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.1.Final
-2026-07-28T00:47:09.162+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-07-28T00:47:09.210+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-07-28T00:47:09.466+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@72bb3e96
-2026-07-28T00:47:09.469+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-07-28T00:47:09.580+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:mysql://localhost:3306/kunash_crm_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&allowPublicKeyRetrieval=true]
-	Database driver: MySQL Connector/J
-	Database dialect: MySQLDialect
-	Database version: 8.0.41
-	Default catalog/schema: kunash_crm_db/undefined
-	Autocommit mode: undefined/unknown
-	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-07-28T00:47:11.162+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-07-28T00:47:12.072+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-07-28T00:47:12.267+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-07-28T00:47:12.755+05:30  WARN 8040 --- [Kunash-CRM] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-07-28T00:47:12.980+05:30 DEBUG 8040 --- [Kunash-CRM] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 11 mappings in 'requestMappingHandlerMapping'
-2026-07-28T00:47:13.020+05:30 DEBUG 8040 --- [Kunash-CRM] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2026-07-28T00:47:13.047+05:30 DEBUG 8040 --- [Kunash-CRM] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
-2026-07-28T00:47:13.111+05:30 DEBUG 8040 --- [Kunash-CRM] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2026-07-28T00:47:13.414+05:30  WARN 8040 --- [Kunash-CRM] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.cache.CacheManager' available: no CacheResolver specified - register a CacheManager bean or remove the @EnableCaching annotation from your configuration.
-2026-07-28T00:47:13.416+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-07-28T00:47:13.425+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-07-28T00:47:13.437+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-07-28T00:47:13.441+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2026-07-28T00:47:13.460+05:30  INFO 8040 --- [Kunash-CRM] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2026-07-28T00:47:13.483+05:30 ERROR 8040 --- [Kunash-CRM] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-A component required a bean of type 'org.springframework.cache.CacheManager' that could not be found.
-
-
-Action:
-
-Consider defining a bean of type 'org.springframework.cache.CacheManager' in your configuration.
-
-2026-07-28T00:48:27.912+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] com.crm.KunashCrmApplication             : Starting KunashCrmApplication using Java 24.0.2 with PID 12144 (C:\Kunash-CRM\kunash_crm_backend_v1_0\target\classes started by admim in C:\Kunash-CRM\kunash_crm_backend_v1_0)
-2026-07-28T00:48:27.917+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] com.crm.KunashCrmApplication             : No active profile set, falling back to 1 default profile: "default"
-2026-07-28T00:48:27.991+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\admim\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-common-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/annotations-13.0.jar
-2026-07-28T00:48:27.991+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-07-28T00:48:27.991+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-07-28T00:48:29.117+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-07-28T00:48:29.119+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2026-07-28T00:48:29.168+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crm.repository.LeadFollowupRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2026-07-28T00:48:29.170+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crm.repository.LeadRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2026-07-28T00:48:29.171+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 0 JDBC repository interfaces.
-2026-07-28T00:48:29.192+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-07-28T00:48:29.193+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-07-28T00:48:29.233+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 2 JPA repository interfaces.
-2026-07-28T00:48:29.992+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 6000 (http)
-2026-07-28T00:48:30.011+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-07-28T00:48:30.011+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
-2026-07-28T00:48:30.067+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2075 ms
-2026-07-28T00:48:30.367+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-07-28T00:48:30.451+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.1.Final
-2026-07-28T00:48:31.125+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-07-28T00:48:31.166+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-07-28T00:48:31.383+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@9e5120f
-2026-07-28T00:48:31.385+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-07-28T00:48:31.519+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:mysql://localhost:3306/kunash_crm_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&allowPublicKeyRetrieval=true]
-	Database driver: MySQL Connector/J
-	Database dialect: MySQLDialect
-	Database version: 8.0.41
-	Default catalog/schema: kunash_crm_db/undefined
-	Autocommit mode: undefined/unknown
-	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-07-28T00:48:32.890+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-07-28T00:48:33.020+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-07-28T00:48:33.168+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-07-28T00:48:33.581+05:30  WARN 12144 --- [Kunash-CRM] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-07-28T00:48:33.782+05:30 DEBUG 12144 --- [Kunash-CRM] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 11 mappings in 'requestMappingHandlerMapping'
-2026-07-28T00:48:33.825+05:30 DEBUG 12144 --- [Kunash-CRM] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2026-07-28T00:48:33.848+05:30 DEBUG 12144 --- [Kunash-CRM] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
-2026-07-28T00:48:33.909+05:30 DEBUG 12144 --- [Kunash-CRM] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2026-07-28T00:48:34.221+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 6000 (http) with context path '/'
-2026-07-28T00:48:34.229+05:30  INFO 12144 --- [Kunash-CRM] [restartedMain] com.crm.KunashCrmApplication             : Started KunashCrmApplication in 7.051 seconds (process running for 7.943)
-2026-07-28T00:58:20.722+05:30  INFO 12144 --- [Kunash-CRM] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-07-28T00:58:20.737+05:30  INFO 12144 --- [Kunash-CRM] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-07-28T00:58:20.744+05:30  INFO 12144 --- [Kunash-CRM] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-07-28T00:58:20.752+05:30  INFO 12144 --- [Kunash-CRM] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-07-28T00:58:20.770+05:30  INFO 12144 --- [Kunash-CRM] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-07-28T00:58:25.400+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] com.crm.KunashCrmApplication             : Starting KunashCrmApplication using Java 24.0.2 with PID 20484 (C:\Kunash-CRM\kunash_crm_backend_v1_0\target\classes started by admim in C:\Kunash-CRM\kunash_crm_backend_v1_0)
-2026-07-28T00:58:25.405+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] com.crm.KunashCrmApplication             : No active profile set, falling back to 1 default profile: "default"
-2026-07-28T00:58:25.483+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\admim\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-common-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/annotations-13.0.jar
-2026-07-28T00:58:25.484+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-07-28T00:58:25.484+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-07-28T00:58:26.584+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-07-28T00:58:26.586+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2026-07-28T00:58:26.637+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crm.repository.LeadFollowupRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2026-07-28T00:58:26.640+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crm.repository.LeadRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2026-07-28T00:58:26.641+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 0 JDBC repository interfaces.
-2026-07-28T00:58:26.653+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-07-28T00:58:26.655+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-07-28T00:58:26.693+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 2 JPA repository interfaces.
-2026-07-28T00:58:27.451+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 9090 (http)
-2026-07-28T00:58:27.471+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-07-28T00:58:27.471+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
-2026-07-28T00:58:27.535+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2050 ms
-2026-07-28T00:58:27.835+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-07-28T00:58:27.927+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.1.Final
-2026-07-28T00:58:28.581+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-07-28T00:58:28.623+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-07-28T00:58:28.837+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3306098e
-2026-07-28T00:58:28.840+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-07-28T00:58:28.934+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:mysql://localhost:3306/kunash_crm_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&allowPublicKeyRetrieval=true]
-	Database driver: MySQL Connector/J
-	Database dialect: MySQLDialect
-	Database version: 8.0.41
-	Default catalog/schema: kunash_crm_db/undefined
-	Autocommit mode: undefined/unknown
-	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-07-28T00:58:30.193+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-07-28T00:58:30.281+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-07-28T00:58:30.418+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-07-28T00:58:30.851+05:30  WARN 20484 --- [Kunash-CRM] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-07-28T00:58:31.055+05:30 DEBUG 20484 --- [Kunash-CRM] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 11 mappings in 'requestMappingHandlerMapping'
-2026-07-28T00:58:31.096+05:30 DEBUG 20484 --- [Kunash-CRM] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2026-07-28T00:58:31.123+05:30 DEBUG 20484 --- [Kunash-CRM] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
-2026-07-28T00:58:31.178+05:30 DEBUG 20484 --- [Kunash-CRM] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2026-07-28T00:58:31.472+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 9090 (http) with context path '/'
-2026-07-28T00:58:31.482+05:30  INFO 20484 --- [Kunash-CRM] [restartedMain] com.crm.KunashCrmApplication             : Started KunashCrmApplication in 6.915 seconds (process running for 7.852)
-2026-07-28T00:59:28.796+05:30  INFO 20484 --- [Kunash-CRM] [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-07-28T00:59:28.798+05:30  INFO 20484 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-07-28T00:59:28.799+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
-2026-07-28T00:59:28.800+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
-2026-07-28T00:59:28.800+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@2816ad97
-2026-07-28T00:59:28.800+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@2def57e1
-2026-07-28T00:59:28.800+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2026-07-28T00:59:28.800+05:30  INFO 20484 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2026-07-28T00:59:28.831+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/lead/v1", parameters={multipart}
-2026-07-28T00:59:28.923+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#createLead(LeadRequestDto, MultipartFile)
-2026-07-28T00:59:29.234+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-1] .m.m.a.RequestPartMethodArgumentResolver : Read "application/json" to [com.crm.dto.request.LeadRequestDto@3884d9a0]
-2026-07-28T00:59:29.627+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T00:59:29.631+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.crm.dto.response.LeadResponseDto@1b996f45]
-2026-07-28T00:59:29.735+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-07-28T01:00:51.435+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/lead/v1", parameters={multipart}
-2026-07-28T01:00:51.435+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#createLead(LeadRequestDto, MultipartFile)
-2026-07-28T01:00:51.442+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-3] .m.m.a.RequestPartMethodArgumentResolver : Read "application/json" to [com.crm.dto.request.LeadRequestDto@3593a815]
-2026-07-28T01:00:51.459+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:00:51.459+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.crm.dto.response.LeadResponseDto@521296b4]
-2026-07-28T01:00:51.467+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-07-28T01:11:59.163+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=%2B918317289305", parameters={masked}
-2026-07-28T01:11:59.169+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getLeadByPrimeId(Long)
-2026-07-28T01:11:59.191+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.method.HandlerMethod             : Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.crm.dto.response.LeadResponseDto> com.crm.controller.LeadController.getLeadByPrimeId(java.lang.Long): Method parameter 'leadPrimeId': Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "check-phone"
-2026-07-28T01:11:59.208+05:30  WARN 20484 --- [Kunash-CRM] [http-nio-9090-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Method parameter 'leadPrimeId': Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "check-phone"]
-2026-07-28T01:11:59.210+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
-2026-07-28T01:11:59.238+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error?phone=%2B918317289305", parameters={masked}
-2026-07-28T01:11:59.243+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.webmvc.autoconfigure.error.BasicErrorController#error(HttpServletRequest)
-2026-07-28T01:11:59.255+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:11:59.259+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Jul 28 01:11:59 IST 2026, status=400, error=Bad Request, trace=org.springframework.we (truncated)...]
-2026-07-28T01:11:59.276+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 400
-2026-07-28T01:12:14.196+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:12:14.200+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getLeadByPrimeId(Long)
-2026-07-28T01:12:14.206+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.method.HandlerMethod             : Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.crm.dto.response.LeadResponseDto> com.crm.controller.LeadController.getLeadByPrimeId(java.lang.Long): Method parameter 'leadPrimeId': Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "check-phone"
-2026-07-28T01:12:14.210+05:30  WARN 20484 --- [Kunash-CRM] [http-nio-9090-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Method parameter 'leadPrimeId': Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "check-phone"]
-2026-07-28T01:12:14.212+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
-2026-07-28T01:12:14.227+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error?phone=8317289305", parameters={masked}
-2026-07-28T01:12:14.229+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.webmvc.autoconfigure.error.BasicErrorController#error(HttpServletRequest)
-2026-07-28T01:12:14.236+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:12:14.236+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Jul 28 01:12:14 IST 2026, status=400, error=Bad Request, trace=org.springframework.we (truncated)...]
-2026-07-28T01:12:14.242+05:30 DEBUG 20484 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 400
-2026-07-28T01:12:15.795+05:30  INFO 20484 --- [Kunash-CRM] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-07-28T01:12:15.808+05:30  INFO 20484 --- [Kunash-CRM] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-07-28T01:12:15.812+05:30  INFO 20484 --- [Kunash-CRM] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-07-28T01:12:15.819+05:30  INFO 20484 --- [Kunash-CRM] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-07-28T01:12:15.839+05:30  INFO 20484 --- [Kunash-CRM] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-07-28T01:12:24.350+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] com.crm.KunashCrmApplication             : Starting KunashCrmApplication using Java 24.0.2 with PID 11032 (C:\Kunash-CRM\kunash_crm_backend_v1_0\target\classes started by admim in C:\Kunash-CRM\kunash_crm_backend_v1_0)
-2026-07-28T01:12:24.356+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] com.crm.KunashCrmApplication             : No active profile set, falling back to 1 default profile: "default"
-2026-07-28T01:12:24.436+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\admim\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-common-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/annotations-13.0.jar
-2026-07-28T01:12:24.437+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-07-28T01:12:24.437+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-07-28T01:12:25.577+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-07-28T01:12:25.580+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2026-07-28T01:12:25.636+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crm.repository.LeadFollowupRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2026-07-28T01:12:25.639+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crm.repository.LeadRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2026-07-28T01:12:25.640+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 0 JDBC repository interfaces.
-2026-07-28T01:12:25.654+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-07-28T01:12:25.656+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-07-28T01:12:25.696+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 2 JPA repository interfaces.
-2026-07-28T01:12:26.464+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 9090 (http)
-2026-07-28T01:12:26.490+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-07-28T01:12:26.491+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
-2026-07-28T01:12:26.567+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2129 ms
-2026-07-28T01:12:26.865+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-07-28T01:12:26.937+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.1.Final
-2026-07-28T01:12:27.709+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-07-28T01:12:27.755+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-07-28T01:12:27.989+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@23cbde02
-2026-07-28T01:12:27.991+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-07-28T01:12:28.087+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:mysql://localhost:3306/kunash_crm_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&allowPublicKeyRetrieval=true]
-	Database driver: MySQL Connector/J
-	Database dialect: MySQLDialect
-	Database version: 8.0.41
-	Default catalog/schema: kunash_crm_db/undefined
-	Autocommit mode: undefined/unknown
-	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-07-28T01:12:29.505+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-07-28T01:12:29.587+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-07-28T01:12:29.719+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-07-28T01:12:31.206+05:30  WARN 11032 --- [Kunash-CRM] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-07-28T01:12:31.403+05:30 DEBUG 11032 --- [Kunash-CRM] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 12 mappings in 'requestMappingHandlerMapping'
-2026-07-28T01:12:31.448+05:30 DEBUG 11032 --- [Kunash-CRM] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2026-07-28T01:12:31.473+05:30 DEBUG 11032 --- [Kunash-CRM] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
-2026-07-28T01:12:31.524+05:30 DEBUG 11032 --- [Kunash-CRM] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2026-07-28T01:12:31.828+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 9090 (http) with context path '/'
-2026-07-28T01:12:31.839+05:30  INFO 11032 --- [Kunash-CRM] [restartedMain] com.crm.KunashCrmApplication             : Started KunashCrmApplication in 8.227 seconds (process running for 9.329)
-2026-07-28T01:12:36.073+05:30  INFO 11032 --- [Kunash-CRM] [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-07-28T01:12:36.075+05:30  INFO 11032 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-07-28T01:12:36.075+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
-2026-07-28T01:12:36.075+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
-2026-07-28T01:12:36.080+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@4f11ebc5
-2026-07-28T01:12:36.081+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@5b342200
-2026-07-28T01:12:36.083+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2026-07-28T01:12:36.083+05:30  INFO 11032 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
-2026-07-28T01:12:36.110+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:12:36.137+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:12:36.272+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:12:36.272+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:12:36.277+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:12:41.488+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:12:41.493+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:12:41.499+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:12:41.499+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:12:41.501+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:12:50.147+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=%2B918317289305", parameters={masked}
-2026-07-28T01:12:50.155+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:12:50.339+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:12:50.339+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.crm.dto.response.LeadResponseDto@45ad5b9d]
-2026-07-28T01:12:50.416+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-07-28T01:12:56.174+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=%2B918317289305", parameters={masked}
-2026-07-28T01:12:56.174+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:12:56.203+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:12:56.203+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.crm.dto.response.LeadResponseDto@aa60260]
-2026-07-28T01:12:56.216+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-07-28T01:13:28.306+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=%2B918317289305", parameters={masked}
-2026-07-28T01:13:28.312+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:13:28.328+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:13:28.337+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.crm.dto.response.LeadResponseDto@583620d8]
-2026-07-28T01:13:28.346+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2026-07-28T01:13:33.420+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:13:33.435+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:13:33.447+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:13:33.450+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:13:33.452+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:13:42.337+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:13:42.338+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:13:42.342+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:13:42.344+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:13:42.347+05:30 DEBUG 11032 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:20:03.847+05:30  INFO 11032 --- [Kunash-CRM] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-07-28T01:20:03.861+05:30  INFO 11032 --- [Kunash-CRM] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-07-28T01:20:03.868+05:30  INFO 11032 --- [Kunash-CRM] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-07-28T01:20:03.877+05:30  INFO 11032 --- [Kunash-CRM] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-07-28T01:20:03.892+05:30  INFO 11032 --- [Kunash-CRM] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-07-28T01:20:09.930+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] com.crm.KunashCrmApplication             : Starting KunashCrmApplication using Java 24.0.2 with PID 6940 (C:\Kunash-CRM\kunash_crm_backend_v1_0\target\classes started by admim in C:\Kunash-CRM\kunash_crm_backend_v1_0)
-2026-07-28T01:20:09.933+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] com.crm.KunashCrmApplication             : No active profile set, falling back to 1 default profile: "default"
-2026-07-28T01:20:10.013+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\admim\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-common-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/annotations-13.0.jar
-2026-07-28T01:20:10.014+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-07-28T01:20:10.014+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-07-28T01:20:11.504+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-07-28T01:20:11.506+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2026-07-28T01:20:11.644+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crm.repository.LeadFollowupRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2026-07-28T01:20:11.648+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crm.repository.LeadRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2026-07-28T01:20:11.651+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 116 ms. Found 0 JDBC repository interfaces.
-2026-07-28T01:20:11.705+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-07-28T01:20:11.709+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-07-28T01:20:11.810+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 82 ms. Found 2 JPA repository interfaces.
-2026-07-28T01:20:13.564+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 9090 (http)
-2026-07-28T01:20:13.623+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-07-28T01:20:13.623+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
-2026-07-28T01:20:13.781+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3767 ms
-2026-07-28T01:20:14.439+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-07-28T01:20:14.629+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.1.Final
-2026-07-28T01:20:16.286+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-07-28T01:20:16.389+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-07-28T01:20:16.913+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6b649d32
-2026-07-28T01:20:16.919+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-07-28T01:20:17.176+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:mysql://localhost:3306/kunash_crm_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&allowPublicKeyRetrieval=true]
-	Database driver: MySQL Connector/J
-	Database dialect: MySQLDialect
-	Database version: 8.0.41
-	Default catalog/schema: kunash_crm_db/undefined
-	Autocommit mode: undefined/unknown
-	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-07-28T01:20:20.236+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-07-28T01:20:20.438+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-07-28T01:20:20.757+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-07-28T01:20:23.927+05:30  WARN 6940 --- [Kunash-CRM] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-07-28T01:20:24.375+05:30 DEBUG 6940 --- [Kunash-CRM] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 12 mappings in 'requestMappingHandlerMapping'
-2026-07-28T01:20:24.480+05:30 DEBUG 6940 --- [Kunash-CRM] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2026-07-28T01:20:24.533+05:30 DEBUG 6940 --- [Kunash-CRM] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
-2026-07-28T01:20:24.659+05:30 DEBUG 6940 --- [Kunash-CRM] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2026-07-28T01:20:25.301+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 9090 (http) with context path '/'
-2026-07-28T01:20:25.323+05:30  INFO 6940 --- [Kunash-CRM] [restartedMain] com.crm.KunashCrmApplication             : Started KunashCrmApplication in 16.183 seconds (process running for 17.258)
-2026-07-28T01:20:41.376+05:30  INFO 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-07-28T01:20:41.376+05:30  INFO 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-07-28T01:20:41.378+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
-2026-07-28T01:20:41.378+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
-2026-07-28T01:20:41.380+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@4f11ebc5
-2026-07-28T01:20:41.382+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@5b342200
-2026-07-28T01:20:41.384+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2026-07-28T01:20:41.384+05:30  INFO 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
-2026-07-28T01:20:41.404+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/lead/v1", parameters={multipart}
-2026-07-28T01:20:41.478+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#createLead(LeadRequestDto, MultipartFile)
-2026-07-28T01:20:41.780+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] .m.m.a.RequestPartMethodArgumentResolver : Read "application/json" to [com.crm.dto.request.LeadRequestDto@6bb116e]
-2026-07-28T01:20:41.994+05:30  WARN 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] .w.s.m.a.ResponseStatusExceptionResolver : Resolved [org.springframework.web.server.ResponseStatusException: 409 CONFLICT "A lead with this email already exists"]
-2026-07-28T01:20:41.994+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 409 CONFLICT
-2026-07-28T01:20:42.008+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={multipart}
-2026-07-28T01:20:42.013+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.webmvc.autoconfigure.error.BasicErrorController#error(HttpServletRequest)
-2026-07-28T01:20:42.033+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:20:42.041+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Jul 28 01:20:42 IST 2026, status=409, error=Conflict, trace=org.springframework.web.s (truncated)...]
-2026-07-28T01:20:42.114+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 409
-2026-07-28T01:20:48.895+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/lead/v1", parameters={multipart}
-2026-07-28T01:20:48.900+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#createLead(LeadRequestDto, MultipartFile)
-2026-07-28T01:20:48.902+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] .m.m.a.RequestPartMethodArgumentResolver : Read "application/json" to [com.crm.dto.request.LeadRequestDto@4f92904]
-2026-07-28T01:20:48.913+05:30  WARN 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] .w.s.m.a.ResponseStatusExceptionResolver : Resolved [org.springframework.web.server.ResponseStatusException: 409 CONFLICT "A lead with this email already exists"]
-2026-07-28T01:20:48.915+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 409 CONFLICT
-2026-07-28T01:20:48.917+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={multipart}
-2026-07-28T01:20:48.917+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.webmvc.autoconfigure.error.BasicErrorController#error(HttpServletRequest)
-2026-07-28T01:20:48.917+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:20:48.917+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Jul 28 01:20:48 IST 2026, status=409, error=Conflict, trace=org.springframework.web.s (truncated)...]
-2026-07-28T01:20:48.925+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 409
-2026-07-28T01:20:49.603+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/lead/v1", parameters={multipart}
-2026-07-28T01:20:49.608+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#createLead(LeadRequestDto, MultipartFile)
-2026-07-28T01:20:49.610+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] .m.m.a.RequestPartMethodArgumentResolver : Read "application/json" to [com.crm.dto.request.LeadRequestDto@67e73814]
-2026-07-28T01:20:49.622+05:30  WARN 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] .w.s.m.a.ResponseStatusExceptionResolver : Resolved [org.springframework.web.server.ResponseStatusException: 409 CONFLICT "A lead with this email already exists"]
-2026-07-28T01:20:49.624+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 409 CONFLICT
-2026-07-28T01:20:49.625+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={multipart}
-2026-07-28T01:20:49.625+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.webmvc.autoconfigure.error.BasicErrorController#error(HttpServletRequest)
-2026-07-28T01:20:49.625+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:20:49.625+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Jul 28 01:20:49 IST 2026, status=409, error=Conflict, trace=org.springframework.web.s (truncated)...]
-2026-07-28T01:20:49.632+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 409
-2026-07-28T01:25:15.335+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/lead/v1", parameters={multipart}
-2026-07-28T01:25:15.337+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#createLead(LeadRequestDto, MultipartFile)
-2026-07-28T01:25:15.343+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] .m.m.a.RequestPartMethodArgumentResolver : Read "application/json" to [com.crm.dto.request.LeadRequestDto@f77b841]
-2026-07-28T01:25:15.355+05:30  WARN 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] .w.s.m.a.ResponseStatusExceptionResolver : Resolved [org.springframework.web.server.ResponseStatusException: 409 CONFLICT "A lead with this email already exists"]
-2026-07-28T01:25:15.358+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 409 CONFLICT
-2026-07-28T01:25:15.359+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={multipart}
-2026-07-28T01:25:15.359+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.webmvc.autoconfigure.error.BasicErrorController#error(HttpServletRequest)
-2026-07-28T01:25:15.359+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:25:15.359+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Jul 28 01:25:15 IST 2026, status=409, error=Conflict, trace=org.springframework.web.s (truncated)...]
-2026-07-28T01:25:15.359+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 409
-2026-07-28T01:25:27.435+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:25:27.435+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:25:27.451+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:25:27.453+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:25:27.453+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:25:42.530+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:25:42.532+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:25:42.539+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:25:42.542+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:25:42.542+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:25:48.411+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:25:48.411+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:25:48.415+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:25:48.415+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:25:48.415+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:25:52.026+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:25:52.031+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:25:52.040+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:25:52.040+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:25:52.042+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:26:07.829+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:26:07.829+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:26:07.835+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:26:07.835+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:26:07.835+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:26:14.345+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:26:14.346+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:26:14.350+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:26:14.352+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:26:14.352+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:26:19.312+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/lead/v1", parameters={multipart}
-2026-07-28T01:26:19.319+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#createLead(LeadRequestDto, MultipartFile)
-2026-07-28T01:26:19.319+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] .m.m.a.RequestPartMethodArgumentResolver : Read "application/json" to [com.crm.dto.request.LeadRequestDto@3f30e3ce]
-2026-07-28T01:26:19.330+05:30  WARN 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] .w.s.m.a.ResponseStatusExceptionResolver : Resolved [org.springframework.web.server.ResponseStatusException: 409 CONFLICT "A lead with this phone number already exists"]
-2026-07-28T01:26:19.330+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 409 CONFLICT
-2026-07-28T01:26:19.333+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={multipart}
-2026-07-28T01:26:19.333+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.webmvc.autoconfigure.error.BasicErrorController#error(HttpServletRequest)
-2026-07-28T01:26:19.335+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:26:19.335+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Tue Jul 28 01:26:19 IST 2026, status=409, error=Conflict, trace=org.springframework.web.s (truncated)...]
-2026-07-28T01:26:19.339+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 409
-2026-07-28T01:26:25.602+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:26:25.606+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:26:25.612+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:26:25.616+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:26:25.618+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:26:30.344+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:26:30.348+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:26:30.354+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:26:30.354+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:26:30.356+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:26:38.417+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:26:38.419+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:26:38.423+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:26:38.423+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:26:38.426+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:26:42.768+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:26:42.768+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:26:42.774+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:26:42.774+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:26:42.774+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:26:46.299+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:26:46.299+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:26:46.302+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:26:46.303+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:26:46.303+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:26:51.095+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:26:51.097+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:26:51.104+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:26:51.107+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:26:51.109+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:27:05.491+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:27:05.491+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:27:05.503+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:27:05.505+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:27:05.507+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:27:40.425+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:27:40.427+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:27:40.436+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:27:40.436+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:27:40.439+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:29:38.493+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:29:38.496+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:29:38.500+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:29:38.500+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:29:38.500+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:29:40.613+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:29:40.613+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:29:40.619+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:29:40.620+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:29:40.620+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:29:44.576+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:29:44.578+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:29:44.600+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:29:44.600+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:29:44.602+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:30:00.029+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:30:00.029+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:30:00.037+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:30:00.037+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:30:00.041+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:30:00.699+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:30:00.704+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:30:00.717+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:30:00.717+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:30:00.721+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:30:14.849+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:30:14.850+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:30:14.853+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:30:14.854+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:30:14.855+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:30:19.955+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:30:19.956+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:30:19.960+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:30:19.960+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:30:19.960+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:30:21.539+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:30:21.539+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:30:21.541+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:30:21.541+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:30:21.542+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:30:27.444+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:30:27.444+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:30:27.451+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:30:27.451+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:30:27.451+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:30:32.428+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:30:32.428+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:30:32.428+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:30:32.428+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:30:32.428+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:30:35.616+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:30:35.616+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:30:35.618+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:30:35.618+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:30:35.620+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:31:23.286+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:31:23.287+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:31:23.287+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:31:23.287+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:31:23.287+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:31:26.606+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:31:26.606+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:31:26.612+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:31:26.612+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:31:26.612+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:31:37.294+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289303", parameters={masked}
-2026-07-28T01:31:37.294+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:31:37.294+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:31:37.300+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:31:37.300+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:31:38.503+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:31:38.503+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:31:38.505+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:31:38.507+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:31:38.507+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:31:40.183+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:31:40.183+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:31:40.185+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:31:40.186+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:31:40.186+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:32:59.020+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:32:59.020+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:32:59.027+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:32:59.027+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:32:59.029+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:33:02.565+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:33:02.566+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:33:02.575+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:33:02.577+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:33:02.578+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:33:07.016+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:33:07.016+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:33:07.023+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:33:07.025+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:33:07.029+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:33:10.075+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:33:10.077+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:33:10.081+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:33:10.083+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:33:10.085+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:33:17.021+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:33:17.021+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:33:17.027+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:33:17.027+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:33:17.027+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:33:17.178+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:33:17.178+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:33:17.182+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:33:17.182+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:33:17.182+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:33:20.642+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289322", parameters={masked}
-2026-07-28T01:33:20.642+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:33:20.652+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:33:20.652+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:33:20.652+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:33:27.521+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:33:27.521+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:33:27.528+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:33:27.528+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:33:27.528+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:33:28.395+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:33:28.405+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:33:28.410+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:33:28.412+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:33:28.415+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:33:29.612+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
-2026-07-28T01:33:29.616+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
-2026-07-28T01:33:29.617+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2026-07-28T01:33:29.617+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2026-07-28T01:33:29.617+05:30 DEBUG 6940 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
-2026-07-28T01:34:07.375+05:30  INFO 6940 --- [Kunash-CRM] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-07-28T01:34:07.383+05:30  INFO 6940 --- [Kunash-CRM] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-07-28T01:34:07.387+05:30  INFO 6940 --- [Kunash-CRM] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-07-28T01:34:07.393+05:30  INFO 6940 --- [Kunash-CRM] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-07-28T01:34:07.403+05:30  INFO 6940 --- [Kunash-CRM] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-07-29T00:11:17.407+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T00:11:17.429+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T00:11:17.459+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:11:17.459+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T00:11:17.463+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:11:17.468+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T00:11:17.469+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T00:11:17.481+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:11:17.482+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T00:11:17.486+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:15:53.860+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T00:15:53.860+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T00:15:53.874+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:15:53.875+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T00:15:53.876+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:15:53.879+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T00:15:53.880+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T00:15:53.891+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:15:53.893+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T00:15:53.894+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:16:22.068+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T00:16:22.068+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T00:16:22.077+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:16:22.078+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T00:16:22.079+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:16:22.081+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T00:16:22.082+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T00:16:22.091+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:16:22.092+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T00:16:22.093+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:17:04.743+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T00:17:04.743+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T00:17:04.759+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:17:04.760+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T00:17:04.761+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:17:04.763+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T00:17:04.763+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T00:17:04.776+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:17:04.777+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T00:17:04.779+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:17:09.701+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T00:17:09.703+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T00:17:09.715+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:17:09.716+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T00:17:09.718+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:28:12.768+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T00:28:12.769+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T00:28:12.785+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:28:12.785+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T00:28:12.786+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:28:47.756+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T00:28:47.756+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T00:28:47.767+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:28:47.767+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T00:28:47.768+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:29:04.755+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T00:29:04.755+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T00:29:04.764+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:29:04.764+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T00:29:04.765+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:29:10.770+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T00:29:10.770+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T00:29:10.782+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:29:10.782+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T00:29:10.786+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:30:04.266+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/lead/v1/convert/1", parameters={}
+2026-07-29T00:30:04.267+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#convertLead(Long)
+2026-07-29T00:30:04.268+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:30:04.270+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : PATCH "/api/lead/v1/convert/1", parameters={}
+2026-07-29T00:30:04.271+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#convertLead(Long)
+2026-07-29T00:30:04.291+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:30:04.292+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.crm.dto.response.LeadResponseDto@31b8988]
+2026-07-29T00:30:04.292+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:30:04.301+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T00:30:04.302+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T00:30:04.321+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:30:04.322+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 0 containing UNKNOWN instances]
+2026-07-29T00:30:04.324+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:31:08.303+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T00:31:08.303+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T00:31:08.320+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:31:08.320+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T00:31:08.323+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:31:08.335+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T00:31:08.335+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T00:31:08.354+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:31:08.354+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T00:31:08.356+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:31:20.080+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/history/1/followup", parameters={}
+2026-07-29T00:31:20.080+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getFollowupHistory(Long)
+2026-07-29T00:31:20.085+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:31:20.085+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.crm.dto.response.LeadFollowupResponseDto@4ff43fd7, com.crm.dto.response.LeadFollowupResponseDto (truncated)...]
+2026-07-29T00:31:20.086+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:31:23.308+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/1/docFile", parameters={}
+2026-07-29T00:31:23.311+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getDocFile(Long)
+2026-07-29T00:31:23.327+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Found 'Content-Type:application/pdf' in response
+2026-07-29T00:31:23.328+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{255044462d312e330a25badface00a332030206f626a0a3c3c2f54797065202f506167650a2f506172656e7420312030205 (truncated)...]
+2026-07-29T00:31:23.331+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:31:32.724+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/history/1/followup", parameters={}
+2026-07-29T00:31:32.724+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getFollowupHistory(Long)
+2026-07-29T00:31:32.728+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:31:32.728+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.crm.dto.response.LeadFollowupResponseDto@1db07f68, com.crm.dto.response.LeadFollowupResponseDto (truncated)...]
+2026-07-29T00:31:32.729+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:31:49.193+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/lead/v1/add/1/followup", parameters={}
+2026-07-29T00:31:49.194+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#addFollowup(Long, LeadFollowupRequestDto)
+2026-07-29T00:31:49.196+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:31:49.203+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/lead/v1/add/1/followup", parameters={}
+2026-07-29T00:31:49.204+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#addFollowup(Long, LeadFollowupRequestDto)
+2026-07-29T00:31:49.209+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.crm.dto.request.LeadFollowupRequestDto@10cfaf5]
+2026-07-29T00:31:49.250+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:31:49.251+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.crm.dto.response.LeadResponseDto@ab9c432]
+2026-07-29T00:31:49.256+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:31:49.283+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T00:31:49.284+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T00:31:49.306+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:31:49.307+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T00:31:49.310+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:31:56.497+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/history/1/followup", parameters={}
+2026-07-29T00:31:56.497+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getFollowupHistory(Long)
+2026-07-29T00:31:56.502+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:31:56.502+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.crm.dto.response.LeadFollowupResponseDto@22212b90, com.crm.dto.response.LeadFollowupResponseDto (truncated)...]
+2026-07-29T00:31:56.503+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:33:02.138+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T00:33:02.138+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T00:33:02.148+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:33:02.149+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T00:33:02.151+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:33:02.154+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T00:33:02.154+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T00:33:02.164+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:33:02.165+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T00:33:02.167+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:33:19.503+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/1/docFile", parameters={}
+2026-07-29T00:33:19.504+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getDocFile(Long)
+2026-07-29T00:33:19.516+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Found 'Content-Type:application/pdf' in response
+2026-07-29T00:33:19.516+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{255044462d312e330a25badface00a332030206f626a0a3c3c2f54797065202f506167650a2f506172656e7420312030205 (truncated)...]
+2026-07-29T00:33:19.518+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:34:14.248+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T00:34:14.249+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T00:34:14.257+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:34:14.257+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T00:34:14.260+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:34:14.262+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T00:34:14.263+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T00:34:14.271+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:34:14.271+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T00:34:14.272+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:34:28.926+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T00:34:28.926+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T00:34:28.936+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:34:28.936+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T00:34:28.937+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:34:28.939+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T00:34:28.940+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T00:34:28.950+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:34:28.950+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T00:34:28.952+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:51:09.498+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T00:51:09.499+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T00:51:09.518+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:51:09.519+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T00:51:09.522+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T00:51:09.524+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T00:51:09.524+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T00:51:09.534+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T00:51:09.536+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T00:51:09.538+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T01:00:27.098+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T01:00:27.099+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T01:00:27.122+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T01:00:27.122+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T01:00:27.124+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T01:00:27.131+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T01:00:27.131+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T01:00:27.142+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T01:00:27.142+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T01:00:27.154+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T01:01:17.260+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T01:01:17.260+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T01:01:17.270+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T01:01:17.270+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T01:01:17.272+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T01:01:17.275+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T01:01:17.275+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T01:01:17.289+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T01:01:17.289+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T01:01:17.294+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T01:01:20.822+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
+2026-07-29T01:01:20.823+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
+2026-07-29T01:01:20.874+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T01:01:20.875+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.crm.dto.response.LeadResponseDto@5fb57f06]
+2026-07-29T01:01:20.875+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T01:01:23.770+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/check-phone?phone=8317289305", parameters={masked}
+2026-07-29T01:01:23.771+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#checkPhone(String)
+2026-07-29T01:01:23.787+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T01:01:23.788+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.crm.dto.response.LeadResponseDto@4449d1e2]
+2026-07-29T01:01:23.791+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T01:01:23.921+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T01:01:23.922+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T01:01:23.931+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T01:01:23.931+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T01:01:23.932+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T01:01:23.934+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T01:01:23.934+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T01:01:23.942+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T01:01:23.942+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T01:01:23.944+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T01:01:40.454+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T01:01:40.454+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T01:01:40.462+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T01:01:40.462+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T01:01:40.463+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T01:01:40.464+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T01:01:40.464+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T01:01:40.472+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T01:01:40.472+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T01:01:40.474+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T01:01:42.982+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T01:01:42.982+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T01:01:42.989+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T01:01:42.989+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T01:01:42.990+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T01:01:42.992+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T01:01:42.992+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T01:01:43.001+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T01:01:43.001+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T01:01:43.003+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T01:01:43.893+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T01:01:43.893+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T01:01:43.902+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T01:01:43.902+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T01:01:43.903+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T01:01:43.904+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T01:01:43.904+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T01:01:43.912+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T01:01:43.912+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T01:01:43.913+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T01:01:45.143+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T01:01:45.144+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T01:01:45.151+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T01:01:45.151+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T01:01:45.152+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T01:01:45.154+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T01:01:45.154+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T01:01:45.161+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T01:01:45.161+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T01:01:45.162+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T01:01:47.263+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T01:01:47.264+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T01:01:47.274+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T01:01:47.274+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T01:01:47.275+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T01:01:47.276+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T01:01:47.277+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T01:01:47.286+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T01:01:47.286+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T01:01:47.287+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T01:01:47.713+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T01:01:47.713+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T01:01:47.723+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T01:01:47.723+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T01:01:47.724+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T01:01:47.725+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T01:01:47.725+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T01:01:47.733+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T01:01:47.734+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T01:01:47.735+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T01:01:48.141+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T01:01:48.141+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T01:01:48.151+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T01:01:48.152+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T01:01:48.153+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T01:01:48.155+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/lead/v1/all-leads?page=0&size=200", parameters={masked}
+2026-07-29T01:01:48.155+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.crm.controller.LeadController#getAllLeads(int, int)
+2026-07-29T01:01:48.164+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-07-29T01:01:48.165+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.crm.dto.response.LeadResponseDto instances]
+2026-07-29T01:01:48.165+05:30 DEBUG 9600 --- [Kunash-CRM] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-29T01:03:08.430+05:30  INFO 9600 --- [Kunash-CRM] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-07-29T01:03:08.438+05:30  INFO 9600 --- [Kunash-CRM] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-07-29T01:03:08.445+05:30  INFO 9600 --- [Kunash-CRM] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-29T01:03:08.456+05:30  INFO 9600 --- [Kunash-CRM] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-07-29T01:03:08.460+05:30  INFO 9600 --- [Kunash-CRM] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

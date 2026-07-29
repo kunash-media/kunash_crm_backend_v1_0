@@ -2,6 +2,7 @@ package com.crm.service;
 
 import com.crm.dto.request.LeadFollowupRequestDto;
 import com.crm.dto.request.LeadRequestDto;
+import com.crm.dto.response.LeadFollowupResponseDto;
 import com.crm.dto.response.LeadResponseDto;
 import org.springframework.data.domain.Page;
 import org.springframework.web.multipart.MultipartFile;
@@ -38,4 +39,11 @@ public interface LeadService {
 
     // returns the existing lead if the phone number is already in use, else null
     LeadResponseDto checkPhoneExists(String phone);
+
+    LeadResponseDto convertLead(Long leadPrimeId);
+
+    void deleteBulk(List<Long> leadPrimeIds);
+
+    List<LeadFollowupResponseDto> getFollowupsDetailed(Long leadPrimeId);
+
 }

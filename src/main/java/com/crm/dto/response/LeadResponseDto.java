@@ -26,6 +26,7 @@ public class LeadResponseDto {
     private String docFileUrl;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+    private Integer followupCount;
 
     public Long getLeadPrimeId() { return leadPrimeId; }
     public void setLeadPrimeId(Long leadPrimeId) { this.leadPrimeId = leadPrimeId; }
@@ -89,4 +90,7 @@ public class LeadResponseDto {
 
     public LocalDateTime getUpdatedAt() { return updatedAt; }
     public void setUpdatedAt(LocalDateTime updatedAt) { this.updatedAt = updatedAt; }
+
+    public Integer getFollowupCount() { return followupCount; }
+    public void setFollowupCount(Integer followupCount) { this.followupCount = followupCount; }
 }

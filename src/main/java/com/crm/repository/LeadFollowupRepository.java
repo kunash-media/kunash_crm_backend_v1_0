@@ -13,4 +13,6 @@ public interface LeadFollowupRepository extends JpaRepository<LeadFollowupEntity
     List<LeadFollowupEntity> findByLead_LeadPrimeIdAndDeletedFollowupFalseOrderByFollowupDateDesc(Long leadPrimeId);
 
     Optional<LeadFollowupEntity> findFirstByLead_LeadPrimeIdAndDeletedFollowupFalseOrderByFollowupDateDesc(Long leadPrimeId);
+
+    long countByLead_LeadPrimeIdAndDeletedFollowupFalse(Long leadPrimeId);
 }
