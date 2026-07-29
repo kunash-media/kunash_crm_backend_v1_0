@@ -35,4 +35,13 @@ public interface LeadRepository extends JpaRepository<LeadEntity, Long> {
     Page<LeadEntity> findByDeletedLeadFalseAndLeadConvertedFalse(Pageable pageable);
 
     List<LeadEntity> findByLeadPrimeIdIn(List<Long> leadPrimeIds);
+
+    @org.springframework.data.jpa.repository.Query(
+            "SELECT FUNCTION('DATE_FORMAT', l.createdAt, '%Y-%m') as monthKey, COUNT(l) as cnt " +
+                    "FROM LeadEntity l " +
+                    "WHERE l.deletedLead = false AND l.createdAt >= :fromDate " +
+                    "GROUP BY FUNCTION('DATE_FORMAT', l.createdAt, '%Y-%m')"
+    )
+    List<Object[]> countLeadsGroupedByMonth(@org.springframework.data.repository.query.Param("fromDate") java.time.LocalDateTime fromDate);
+
 }

@@ -4,6 +4,7 @@ import com.crm.dto.request.LeadFollowupRequestDto;
 import com.crm.dto.request.LeadRequestDto;
 import com.crm.dto.response.LeadFollowupResponseDto;
 import com.crm.dto.response.LeadResponseDto;
+import com.crm.dto.stats.MonthlyLeadCountDto;
 import org.springframework.data.domain.Page;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -45,5 +46,8 @@ public interface LeadService {
     void deleteBulk(List<Long> leadPrimeIds);
 
     List<LeadFollowupResponseDto> getFollowupsDetailed(Long leadPrimeId);
+
+    List<MonthlyLeadCountDto> getMonthlyLeadCounts(int monthsBack);
+
 
 }

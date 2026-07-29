@@ -3,6 +3,7 @@ package com.crm.controller;
 import com.crm.dto.request.LeadFollowupRequestDto;
 import com.crm.dto.request.LeadRequestDto;
 import com.crm.dto.response.LeadResponseDto;
+import com.crm.dto.stats.MonthlyLeadCountDto;
 import com.crm.service.LeadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -128,6 +129,15 @@ public class LeadController {
     @GetMapping("/history/{leadPrimeId}/followup")
     public ResponseEntity<List<com.crm.dto.response.LeadFollowupResponseDto>> getFollowupHistory(@PathVariable Long leadPrimeId) {
         return ResponseEntity.ok(leadService.getFollowupsDetailed(leadPrimeId));
+    }
+
+    // Month-wise lead count — used for the dashboard bar chart.
+    // Returns a fixed-length, chronologically-ordered list (oldest to newest),
+    // including months with zero leads so the chart's x-axis stays continuous.
+    @GetMapping("/monthly-count")
+    public ResponseEntity<List<MonthlyLeadCountDto>> getMonthlyLeadCounts(
+            @RequestParam(defaultValue = "6") int monthsBack) {
+        return ResponseEntity.ok(leadService.getMonthlyLeadCounts(monthsBack));
     }
 
     // Add a followup entry

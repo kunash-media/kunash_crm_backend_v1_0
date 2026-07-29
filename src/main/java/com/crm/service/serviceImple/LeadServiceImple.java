@@ -4,6 +4,7 @@ import com.crm.dto.request.LeadFollowupRequestDto;
 import com.crm.dto.request.LeadRequestDto;
 import com.crm.dto.response.LeadFollowupResponseDto;
 import com.crm.dto.response.LeadResponseDto;
+import com.crm.dto.stats.MonthlyLeadCountDto;
 import com.crm.entity.LeadEntity;
 import com.crm.entity.LeadFollowupEntity;
 import com.crm.repository.LeadFollowupRepository;
@@ -129,6 +130,35 @@ public class LeadServiceImple implements LeadService {
             e.setDeletedLead(true);
         }
         leadRepository.saveAll(entities);
+    }
+
+    private static final String[] MONTH_LABELS = {
+            "Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"
+    };
+
+    @Override
+    public List<MonthlyLeadCountDto> getMonthlyLeadCounts(int monthsBack) {
+        java.time.LocalDate today = java.time.LocalDate.now();
+        java.time.LocalDateTime fromDate = today.minusMonths(monthsBack - 1L).withDayOfMonth(1).atStartOfDay();
+
+        // fetch actual counts from DB, keyed by "yyyy-MM"
+        java.util.Map<String, Long> countsByMonth = new java.util.HashMap<>();
+        for (Object[] row : leadRepository.countLeadsGroupedByMonth(fromDate)) {
+            String monthKey = (String) row[0];
+            Long count = ((Number) row[1]).longValue();
+            countsByMonth.put(monthKey, count);
+        }
+
+        // build a complete, ordered list — months with zero leads still appear (chart needs continuous x-axis)
+        List<MonthlyLeadCountDto> result = new java.util.ArrayList<>();
+        for (int i = monthsBack - 1; i >= 0; i--) {
+            java.time.LocalDate monthStart = today.minusMonths(i).withDayOfMonth(1);
+            String monthKey = monthStart.format(java.time.format.DateTimeFormatter.ofPattern("yyyy-MM"));
+            String monthLabel = MONTH_LABELS[monthStart.getMonthValue() - 1];
+            long count = countsByMonth.getOrDefault(monthKey, 0L);
+            result.add(new MonthlyLeadCountDto(monthKey, monthLabel, monthStart.getYear(), count));
+        }
+        return result;
     }
 
     @Override
