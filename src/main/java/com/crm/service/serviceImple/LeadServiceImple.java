@@ -11,6 +11,8 @@ import com.crm.repository.LeadFollowupRepository;
 import com.crm.repository.LeadRepository;
 import com.crm.service.LeadService;
 import com.crm.util.LeadPhoneBloomFilterService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -22,15 +24,16 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 @Service
 public class LeadServiceImple implements LeadService {
 
+    private final Logger log = LoggerFactory.getLogger(LeadServiceImple.class);
     private final LeadRepository leadRepository;
     private final LeadFollowupRepository leadFollowupRepository;
     private final LeadPhoneBloomFilterService bloomFilterService;
-
 
 
     @Autowired
@@ -286,6 +289,40 @@ public class LeadServiceImple implements LeadService {
         return mapEntityToResponse(lead);
     }
 
+    @Override
+    @Transactional
+    public void updateLeadOutcome(Long leadPrimeId, String outcome, String lostReason) {
+        log.info("Updating lead {} outcome to '{}'", leadPrimeId, outcome);
+
+        LeadEntity lead = leadRepository.findById(leadPrimeId)
+                .filter(l -> !Boolean.TRUE.equals(l.getDeletedLead()))
+                .orElseThrow(() -> new NoSuchElementException("Lead not found with id: " + leadPrimeId));
+
+        if ("lost".equalsIgnoreCase(outcome) && (lostReason == null || lostReason.isBlank())) {
+            throw new IllegalArgumentException("lostReason is required when marking a lead as lost");
+        }
+
+        // "open" reverts a lost/won lead back to the active pipeline
+        String normalizedOutcome = "open".equalsIgnoreCase(outcome) ? null : outcome;
+        lead.setLeadOutcome(normalizedOutcome);
+        lead.setLostReason("lost".equalsIgnoreCase(outcome) ? lostReason : null);
+        leadRepository.save(lead);
+
+        log.info("Lead {} outcome set to '{}' (reason={})", leadPrimeId, normalizedOutcome, lead.getLostReason());
+    }
+
+    @Override
+    public Page<LeadResponseDto> getLeadsByOutcome(String outcome, int page, int size) {
+        long total = leadRepository.countByLeadOutcomeAndDeletedLeadFalse(outcome);
+        int effectiveSize = size;
+        if ((long) page * size >= total && total > 0) {
+            effectiveSize = (int) Math.max(size, total);
+        }
+        Pageable pageable = PageRequest.of(0, Math.max(effectiveSize, 1));
+        Page<LeadEntity> pageResult = leadRepository.findByLeadOutcomeAndDeletedLeadFalse(outcome, pageable);
+        return pageResult.map(this::mapEntityToResponse);
+    }
+
     // Keeps LeadEntity.followupStatus/followUpDate as an accurate cache of the
     // latest surviving (non-deleted) child row — called after any followup
     // add/edit/delete so the parent snapshot never shows stale or misleading
@@ -350,6 +387,7 @@ public class LeadServiceImple implements LeadService {
         if (dto.getLeadConverted() != null) {
             entity.setLeadConverted(dto.getLeadConverted());
         }
+
     }
 
     private LeadResponseDto mapEntityToResponse(LeadEntity entity) {
@@ -378,6 +416,8 @@ public class LeadServiceImple implements LeadService {
         res.setFollowupCount((int) leadFollowupRepository.countByLead_LeadPrimeIdAndDeletedFollowupFalse(entity.getLeadPrimeId()));
         res.setCreatedAt(entity.getCreatedAt());
         res.setUpdatedAt(entity.getUpdatedAt());
+        res.setLeadOutcome(entity.getLeadOutcome());
+        res.setLostReason(entity.getLostReason());
         return res;
     }
 }

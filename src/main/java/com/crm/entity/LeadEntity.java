@@ -32,13 +32,14 @@ public class LeadEntity {
     private LocalDate followUpDate;
     private String followupStatus;      // pending / done / rescheduled etc.
 
-
-
     @Column(length = 2000)
     private String notes;
 
     private Boolean deletedLead = false;
     private Boolean leadConverted = false;
+
+    private String leadOutcome; // null = open, "won", "lost" — independent of deletedLead
+    private String lostReason; // only meaningful when leadOutcome = "lost"
 
     @Lob
     @Column(name = "doc_file", columnDefinition = "LONGBLOB")
@@ -136,4 +137,15 @@ public class LeadEntity {
 
     public java.util.List<LeadFollowupEntity> getFollowups() { return followups; }
     public void setFollowups(java.util.List<LeadFollowupEntity> followups) { this.followups = followups; }
+
+    public String getLeadOutcome() { return leadOutcome; }
+    public void setLeadOutcome(String leadOutcome) { this.leadOutcome = leadOutcome; }
+
+    public String getLostReason() {
+        return lostReason;
+    }
+
+    public void setLostReason(String lostReason) {
+        this.lostReason = lostReason;
+    }
 }

@@ -28,6 +28,9 @@ public class LeadResponseDto {
     private LocalDateTime updatedAt;
     private Integer followupCount;
 
+    private String leadOutcome; // null = open, "won", "lost" — independent of deletedLead
+    private String lostReason; // only meaningful when leadOutcome = "lost"
+
     public Long getLeadPrimeId() { return leadPrimeId; }
     public void setLeadPrimeId(Long leadPrimeId) { this.leadPrimeId = leadPrimeId; }
 
@@ -93,4 +96,20 @@ public class LeadResponseDto {
 
     public Integer getFollowupCount() { return followupCount; }
     public void setFollowupCount(Integer followupCount) { this.followupCount = followupCount; }
+
+    public String getLeadOutcome() {
+        return leadOutcome;
+    }
+
+    public void setLeadOutcome(String leadOutcome) {
+        this.leadOutcome = leadOutcome;
+    }
+
+    public String getLostReason() {
+        return lostReason;
+    }
+
+    public void setLostReason(String lostReason) {
+        this.lostReason = lostReason;
+    }
 }

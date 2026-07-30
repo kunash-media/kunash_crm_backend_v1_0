@@ -49,5 +49,8 @@ public interface LeadService {
 
     List<MonthlyLeadCountDto> getMonthlyLeadCounts(int monthsBack);
 
+    void updateLeadOutcome(Long leadPrimeId, String outcome, String lostReason);
+
+    Page<LeadResponseDto> getLeadsByOutcome(String outcome, int page, int size);
 
 }

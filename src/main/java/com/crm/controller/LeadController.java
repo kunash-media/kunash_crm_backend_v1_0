@@ -1,10 +1,18 @@
 package com.crm.controller;
 
+import com.crm.dto.request.EmailRequestDto;
 import com.crm.dto.request.LeadFollowupRequestDto;
+import com.crm.dto.request.LeadOutcomeRequest;
 import com.crm.dto.request.LeadRequestDto;
+import com.crm.dto.response.BulkEmailResponseDto;
+import com.crm.dto.response.EmailResultDto;
 import com.crm.dto.response.LeadResponseDto;
 import com.crm.dto.stats.MonthlyLeadCountDto;
+import com.crm.service.EmailService;
 import com.crm.service.LeadService;
+import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpHeaders;
@@ -21,11 +29,14 @@ import java.util.List;
 @RequestMapping("/api/lead/v1")
 public class LeadController {
 
+    private static final Logger log = LoggerFactory.getLogger(LeadController.class);
     private final LeadService leadService;
+    private final EmailService emailService;
 
     @Autowired
-    public LeadController(LeadService leadService) {
+    public LeadController(LeadService leadService, EmailService emailService) {
         this.leadService = leadService;
+        this.emailService = emailService;
     }
 
     // CREATE
@@ -138,6 +149,39 @@ public class LeadController {
     public ResponseEntity<List<MonthlyLeadCountDto>> getMonthlyLeadCounts(
             @RequestParam(defaultValue = "6") int monthsBack) {
         return ResponseEntity.ok(leadService.getMonthlyLeadCounts(monthsBack));
+    }
+
+    @PostMapping("/{leadPrimeId}/send-email")
+    public ResponseEntity<EmailResultDto> sendSingleEmail(
+            @PathVariable Long leadPrimeId,
+            @RequestBody EmailRequestDto emailRequestDto) {
+        EmailResultDto result = emailService.sendSingleEmail(leadPrimeId, emailRequestDto);
+        return ResponseEntity.ok(result);
+    }
+
+    @PostMapping("/send-email-bulk")
+    public ResponseEntity<BulkEmailResponseDto> sendBulkEmail(@RequestBody EmailRequestDto emailRequestDto) {
+        BulkEmailResponseDto result = emailService.sendBulkEmails(emailRequestDto);
+        return ResponseEntity.ok(result);
+    }
+
+    @PatchMapping("/{leadPrimeId}/outcome")
+    public ResponseEntity<Void> updateLeadOutcome(
+            @PathVariable Long leadPrimeId,
+            @Valid @RequestBody LeadOutcomeRequest request) {
+        log.info("PATCH /api/lead/v1/{}/outcome — outcome={}", leadPrimeId, request.getLeadOutcome());
+        leadService.updateLeadOutcome(leadPrimeId, request.getLeadOutcome(), request.getLostReason());
+        return ResponseEntity.noContent().build();
+    }
+
+
+    @GetMapping("/by-outcome")
+    public ResponseEntity<Page<LeadResponseDto>> getLeadsByOutcome(
+            @RequestParam String outcome,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "20") int size) {
+        log.info("GET /api/lead/v1/by-outcome — outcome={}, page={}, size={}", outcome, page, size);
+        return ResponseEntity.ok(leadService.getLeadsByOutcome(outcome, page, size));
     }
 
     // Add a followup entry
