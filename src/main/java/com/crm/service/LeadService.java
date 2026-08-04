@@ -2,6 +2,7 @@ package com.crm.service;
 
 import com.crm.dto.request.LeadFollowupRequestDto;
 import com.crm.dto.request.LeadRequestDto;
+import com.crm.dto.response.BulkUploadResult;
 import com.crm.dto.response.LeadFollowupResponseDto;
 import com.crm.dto.response.LeadResponseDto;
 import com.crm.dto.stats.MonthlyLeadCountDto;
@@ -52,5 +53,7 @@ public interface LeadService {
     void updateLeadOutcome(Long leadPrimeId, String outcome, String lostReason);
 
     Page<LeadResponseDto> getLeadsByOutcome(String outcome, int page, int size);
+
+    BulkUploadResult bulkUploadLeads(MultipartFile file) throws Exception;
 
 }

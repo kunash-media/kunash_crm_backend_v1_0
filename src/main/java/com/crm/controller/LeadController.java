@@ -5,6 +5,7 @@ import com.crm.dto.request.LeadFollowupRequestDto;
 import com.crm.dto.request.LeadOutcomeRequest;
 import com.crm.dto.request.LeadRequestDto;
 import com.crm.dto.response.BulkEmailResponseDto;
+import com.crm.dto.response.BulkUploadResult;
 import com.crm.dto.response.EmailResultDto;
 import com.crm.dto.response.LeadResponseDto;
 import com.crm.dto.stats.MonthlyLeadCountDto;
@@ -174,7 +175,6 @@ public class LeadController {
         return ResponseEntity.noContent().build();
     }
 
-
     @GetMapping("/by-outcome")
     public ResponseEntity<Page<LeadResponseDto>> getLeadsByOutcome(
             @RequestParam String outcome,
@@ -184,5 +184,12 @@ public class LeadController {
         return ResponseEntity.ok(leadService.getLeadsByOutcome(outcome, page, size));
     }
 
-    // Add a followup entry
+
+    //================ Bulk Api =================//
+    @PostMapping(value = "/bulk-upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<BulkUploadResult> bulkUploadLeads(@RequestParam("file") MultipartFile file) throws Exception {
+        log.info("POST /api/lead/v1/bulk-upload — file={}", file.getOriginalFilename());
+        return ResponseEntity.ok(leadService.bulkUploadLeads(file));
+    }
+
 }

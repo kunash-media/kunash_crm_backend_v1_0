@@ -2,15 +2,23 @@ package com.crm.service.serviceImple;
 
 import com.crm.dto.request.LeadFollowupRequestDto;
 import com.crm.dto.request.LeadRequestDto;
+import com.crm.dto.response.BulkUploadResult;
 import com.crm.dto.response.LeadFollowupResponseDto;
 import com.crm.dto.response.LeadResponseDto;
 import com.crm.dto.stats.MonthlyLeadCountDto;
 import com.crm.entity.LeadEntity;
 import com.crm.entity.LeadFollowupEntity;
+import com.crm.enum_status.LeadField;
 import com.crm.repository.LeadFollowupRepository;
 import com.crm.repository.LeadRepository;
 import com.crm.service.LeadService;
+import com.crm.util.HeaderMapperService;
 import com.crm.util.LeadPhoneBloomFilterService;
+import com.crm.util.LeadRowExtractor;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +31,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.io.UncheckedIOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
@@ -35,14 +45,19 @@ public class LeadServiceImple implements LeadService {
     private final LeadFollowupRepository leadFollowupRepository;
     private final LeadPhoneBloomFilterService bloomFilterService;
 
+    private final HeaderMapperService headerMapperService;
+    private final LeadRowExtractor leadRowExtractor;
+
 
     @Autowired
-    public LeadServiceImple(LeadRepository leadRepository,
-                            LeadFollowupRepository leadFollowupRepository, LeadPhoneBloomFilterService bloomFilterService) {
+    public LeadServiceImple(LeadRepository leadRepository, LeadFollowupRepository leadFollowupRepository, LeadPhoneBloomFilterService bloomFilterService, HeaderMapperService headerMapperService, LeadRowExtractor leadRowExtractor) {
         this.leadRepository = leadRepository;
         this.leadFollowupRepository = leadFollowupRepository;
         this.bloomFilterService = bloomFilterService;
+        this.headerMapperService = headerMapperService;
+        this.leadRowExtractor = leadRowExtractor;
     }
+
 
     @Override
     @Transactional
@@ -369,6 +384,55 @@ public class LeadServiceImple implements LeadService {
             }
         }
     }
+
+
+    //========================================//
+    //              Bulk API
+    //========================================//
+
+    // add new method (anywhere in class body)
+    @Override
+    @Transactional
+    public BulkUploadResult bulkUploadLeads(MultipartFile file) throws Exception {
+        BulkUploadResult result = new BulkUploadResult();
+        List<LeadEntity> toSave = new java.util.ArrayList<>();
+
+        try (java.io.InputStream is = file.getInputStream();
+             Workbook workbook = org.apache.poi.ss.usermodel.WorkbookFactory.create(is)) {
+
+           Sheet sheet = workbook.getSheetAt(0);
+            if (sheet.getPhysicalNumberOfRows() == 0) return result;
+
+            org.apache.poi.ss.usermodel.Row headerRow = sheet.getRow(sheet.getFirstRowNum());
+            List<String> rawHeaders = new ArrayList<>();
+            for (Cell cell : headerRow) rawHeaders.add(cell.getStringCellValue());
+            Map<Integer, LeadField> mapping = headerMapperService.mapHeaders(rawHeaders);
+
+            for (int r = headerRow.getRowNum() + 1; r <= sheet.getLastRowNum(); r++) {
+               Row row = sheet.getRow(r);
+                if (row == null) continue;
+
+                result.totalRows++;
+                List<BulkUploadResult.RowError> rowErrors = new ArrayList<>();
+                LeadEntity lead = leadRowExtractor.extractRow(row, mapping, r + 1, rowErrors);
+
+                if (lead == null) {
+                    result.totalSkipped++;
+                    result.errors.add(rowErrors.get(0));
+                } else {
+                    toSave.add(lead);
+                }
+            }
+
+            if (!toSave.isEmpty()) {
+                leadRepository.saveAll(toSave);
+                toSave.forEach(l -> bloomFilterService.add(l.getPhone()));
+            }
+            result.totalUploaded = toSave.size();
+        }
+        return result;
+    }
+
 
     private void mapDtoToEntity(LeadRequestDto dto, LeadEntity entity) {
         entity.setFirstName(dto.getFirstName());
