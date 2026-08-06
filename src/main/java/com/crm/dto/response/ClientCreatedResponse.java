@@ -1,6 +1,8 @@
 package com.crm.dto.response;
 
 import com.crm.entity.ClientListEntity;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class ClientCreatedResponse {
@@ -25,6 +27,8 @@ public class ClientCreatedResponse {
 
     private String assignTo;
 
+    private LocalDate remainPayFollowUpDate;
+
     public static ClientCreatedResponse from(ClientListEntity entity) {
         ClientCreatedResponse res = new ClientCreatedResponse();
         res.clientPrimeId = entity.getClientPrimeId();
@@ -45,6 +49,8 @@ public class ClientCreatedResponse {
         res.createdAt = entity.getCreatedAt();
         res.updatedAt = entity.getUpdatedAt();
         res.assignTo = entity.getAssignTo();
+        res.remainPayFollowUpDate =  entity.getRemainPayFollowUpDate();
+
         return res;
     }
 
@@ -67,4 +73,12 @@ public class ClientCreatedResponse {
     public LocalDateTime getCreatedAt() { return createdAt; }
     public LocalDateTime getUpdatedAt() { return updatedAt; }
     public String getAssignTo() { return assignTo; }
+
+    public LocalDate getRemainPayFollowUpDate() {
+        return remainPayFollowUpDate;
+    }
+
+    public void setRemainPayFollowUpDate(LocalDate remainPayFollowUpDate) {
+        this.remainPayFollowUpDate = remainPayFollowUpDate;
+    }
 }

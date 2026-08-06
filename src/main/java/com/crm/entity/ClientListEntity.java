@@ -1,6 +1,8 @@
 package com.crm.entity;
 
 import jakarta.persistence.*;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -42,6 +44,8 @@ public class ClientListEntity {
     private LocalDateTime updatedAt;
 
     private String assignTo;
+
+    private LocalDate remainPayFollowUpDate;
 
     @PrePersist
     protected void onCreate() {
@@ -117,4 +121,12 @@ public class ClientListEntity {
 
     public String getAssignTo() { return assignTo; }
     public void setAssignTo(String assignTo) { this.assignTo = assignTo; }
+
+    public LocalDate getRemainPayFollowUpDate() {
+        return remainPayFollowUpDate;
+    }
+
+    public void setRemainPayFollowUpDate(LocalDate remainPayFollowUpDate) {
+        this.remainPayFollowUpDate = remainPayFollowUpDate;
+    }
 }

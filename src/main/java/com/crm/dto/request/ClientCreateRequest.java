@@ -2,6 +2,8 @@ package com.crm.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
 
+import java.time.LocalDate;
+
 public class ClientCreateRequest {
 
     @NotBlank(message = "First name is required")
@@ -27,6 +29,8 @@ public class ClientCreateRequest {
     private Double pendingAmount;
 
     private String assignTo;
+
+    private LocalDate remainPayFollowUpDate;
 
     public String getFirstName() { return firstName; }
     public void setFirstName(String firstName) { this.firstName = firstName; }
@@ -66,4 +70,12 @@ public class ClientCreateRequest {
 
     public String getAssignTo() { return assignTo; }
     public void setAssignTo(String assignTo) { this.assignTo = assignTo; }
+
+    public LocalDate getRemainPayFollowUpDate() {
+        return remainPayFollowUpDate;
+    }
+
+    public void setRemainPayFollowUpDate(LocalDate remainPayFollowUpDate) {
+        this.remainPayFollowUpDate = remainPayFollowUpDate;
+    }
 }

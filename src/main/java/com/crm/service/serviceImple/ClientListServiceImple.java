@@ -68,6 +68,7 @@ public class ClientListServiceImple implements ClientListService {
         entity.setRemainAmount(computeRemain(request.getTotalAmount(), request.getAdvanceAmount()));
         entity.setPendingAmount(request.getPendingAmount());
         entity.setAssignTo(request.getAssignTo());
+        entity.setRemainPayFollowUpDate(request.getRemainPayFollowUpDate());
 
         ClientListEntity saved = clientListRepository.save(entity);
         log.info("Client created — clientStrId={}", saved.getClientStrId());
@@ -94,6 +95,7 @@ public class ClientListServiceImple implements ClientListService {
         }
 
         ClientListEntity entity = new ClientListEntity();
+
         entity.setFirstName(lead.getFirstName());
         entity.setLastName(lead.getLastName());
         entity.setContact(lead.getPhone());
@@ -109,6 +111,7 @@ public class ClientListServiceImple implements ClientListService {
         entity.setAdvanceAmount(advance);
         entity.setRemainAmount(computeRemain(total, advance));
         entity.setPendingAmount(request.getPendingAmount() != null ? request.getPendingAmount() : 0.0);
+        entity.setRemainPayFollowUpDate(request.getRemainPayFollowUpDate());
 
         ClientListEntity saved = clientListRepository.save(entity);
 
@@ -162,6 +165,7 @@ public class ClientListServiceImple implements ClientListService {
         );
         entity.setPendingAmount(request.getPendingAmount());
         entity.setAssignTo(request.getAssignTo());
+        entity.setRemainPayFollowUpDate(request.getRemainPayFollowUpDate());
 
         ClientListEntity saved = clientListRepository.save(entity);
         log.info("Client id={} updated successfully", clientPrimeId);
