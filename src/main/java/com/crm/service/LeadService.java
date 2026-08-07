@@ -5,6 +5,7 @@ import com.crm.dto.request.LeadRequestDto;
 import com.crm.dto.response.BulkUploadResult;
 import com.crm.dto.response.LeadFollowupResponseDto;
 import com.crm.dto.response.LeadResponseDto;
+import com.crm.dto.response.LeadSuggestionDto;
 import com.crm.dto.stats.MonthlyLeadCountDto;
 import org.springframework.data.domain.Page;
 import org.springframework.web.multipart.MultipartFile;
@@ -55,5 +56,7 @@ public interface LeadService {
     Page<LeadResponseDto> getLeadsByOutcome(String outcome, int page, int size);
 
     BulkUploadResult bulkUploadLeads(MultipartFile file) throws Exception;
+
+    List<LeadSuggestionDto> searchLeadSuggestions(String query, int limit);
 
 }

@@ -26,7 +26,7 @@ public class LeadFollowupEntity {
 
     private java.time.LocalDateTime createdAt;
 
-    @jakarta.persistence.PrePersist
+    @PrePersist
     protected void onCreate() {
         this.createdAt = java.time.LocalDateTime.now();
     }

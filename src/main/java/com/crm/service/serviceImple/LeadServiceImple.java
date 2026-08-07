@@ -433,6 +433,26 @@ public class LeadServiceImple implements LeadService {
         return result;
     }
 
+    @Override
+    public List<com.crm.dto.response.LeadSuggestionDto> searchLeadSuggestions(String query, int limit) {
+        if (query == null || query.trim().length() < 2) {
+            return java.util.Collections.emptyList();
+        }
+        int cappedLimit = Math.min(Math.max(limit, 1), 10);
+        Pageable pageable = PageRequest.of(0, cappedLimit);
+
+        return leadRepository.searchLeadsForSuggestion(query.trim(), pageable)
+                .stream()
+                .map(e -> new com.crm.dto.response.LeadSuggestionDto(
+                        e.getLeadPrimeId(),
+                        e.getFirstName(),
+                        e.getLastName(),
+                        e.getPhone(),
+                        e.getCompany(),
+                        e.getStatus()))
+                .collect(Collectors.toList());
+    }
+
 
     private void mapDtoToEntity(LeadRequestDto dto, LeadEntity entity) {
         entity.setFirstName(dto.getFirstName());

@@ -68,4 +68,18 @@ public interface LeadRepository extends JpaRepository<LeadEntity, Long> {
     long countByLeadOutcomeAndDeletedLeadFalse(String leadOutcome);
 
     Page<LeadEntity> findByLeadOutcomeAndDeletedLeadFalse(String leadOutcome, Pageable pageable);
+
+
+    // lead search suggestion
+    @Query(
+            "SELECT l FROM LeadEntity l WHERE l.deletedLead = false AND (" +
+                    "LOWER(l.firstName) LIKE LOWER(CONCAT('%', :query, '%')) OR " +
+                    "LOWER(l.lastName) LIKE LOWER(CONCAT('%', :query, '%')) OR " +
+                    "l.phone LIKE CONCAT('%', :query, '%') OR " +
+                    "LOWER(l.company) LIKE LOWER(CONCAT('%', :query, '%'))) " +
+                    "ORDER BY l.updatedAt DESC"
+    )
+    List<LeadEntity> searchLeadsForSuggestion(
+            @Param("query") String query,
+            Pageable pageable);
 }

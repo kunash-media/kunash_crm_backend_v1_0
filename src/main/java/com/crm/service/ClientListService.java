@@ -5,7 +5,10 @@ import com.crm.dto.request.ClientCreateRequest;
 import com.crm.dto.request.ConvertLeadRequest;
 import com.crm.dto.response.ClientCreatedResponse;
 import com.crm.dto.stats.ClientStatsResponse;
+import com.crm.dto.stats.PendingPaymentAlertResponse;
 import org.springframework.data.domain.Page;
+
+import java.util.List;
 
 public interface ClientListService {
 
@@ -23,6 +26,11 @@ public interface ClientListService {
 
     ClientStatsResponse getClientStats();
 
+
     ClientCreatedResponse assignClient(Long clientPrimeId, AssignClientRequest request);
+
+    List<PendingPaymentAlertResponse> getPendingPaymentAlerts();
+
+    long getPendingPaymentAlertCount();
 
 }

@@ -5,6 +5,7 @@ import com.crm.dto.request.ClientCreateRequest;
 import com.crm.dto.request.ConvertLeadRequest;
 import com.crm.dto.response.ClientCreatedResponse;
 import com.crm.dto.stats.ClientStatsResponse;
+import com.crm.dto.stats.PendingPaymentAlertResponse;
 import com.crm.entity.ClientListEntity;
 import com.crm.entity.LeadEntity;
 import com.crm.repository.ClientListRepository;
@@ -19,7 +20,9 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 
 @Service
 public class ClientListServiceImple implements ClientListService {
@@ -203,5 +206,20 @@ public class ClientListServiceImple implements ClientListService {
 
         log.info("Client id={} assigned to '{}'", clientPrimeId, saved.getAssignTo());
         return ClientCreatedResponse.from(saved);
+    }
+
+    @Override
+    public List<PendingPaymentAlertResponse> getPendingPaymentAlerts() {
+        log.info("Fetching pending payment alerts");
+        return clientListRepository
+                .findByPendingAmountGreaterThanAndDeletedClientFalseOrderByPendingAmountDesc(0.0)
+                .stream()
+                .map(PendingPaymentAlertResponse::from)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public long getPendingPaymentAlertCount() {
+        return clientListRepository.countByPendingAmountGreaterThanAndDeletedClientFalse(0.0);
     }
 }

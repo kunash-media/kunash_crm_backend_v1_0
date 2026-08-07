@@ -4,10 +4,7 @@ import com.crm.dto.request.EmailRequestDto;
 import com.crm.dto.request.LeadFollowupRequestDto;
 import com.crm.dto.request.LeadOutcomeRequest;
 import com.crm.dto.request.LeadRequestDto;
-import com.crm.dto.response.BulkEmailResponseDto;
-import com.crm.dto.response.BulkUploadResult;
-import com.crm.dto.response.EmailResultDto;
-import com.crm.dto.response.LeadResponseDto;
+import com.crm.dto.response.*;
 import com.crm.dto.stats.MonthlyLeadCountDto;
 import com.crm.service.EmailService;
 import com.crm.service.LeadService;
@@ -190,6 +187,13 @@ public class LeadController {
     public ResponseEntity<BulkUploadResult> bulkUploadLeads(@RequestParam("file") MultipartFile file) throws Exception {
         log.info("POST /api/lead/v1/bulk-upload — file={}", file.getOriginalFilename());
         return ResponseEntity.ok(leadService.bulkUploadLeads(file));
+    }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<LeadSuggestionDto>> searchLeadSuggestions(
+            @RequestParam String query,
+            @RequestParam(defaultValue = "8") int limit) {
+        return ResponseEntity.ok(leadService.searchLeadSuggestions(query, limit));
     }
 
 }
