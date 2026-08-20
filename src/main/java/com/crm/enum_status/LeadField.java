@@ -14,8 +14,7 @@ public enum LeadField {
     STATUS(List.of("status","lead status"), LeadEntity::setStatus),
     PRIORITY(List.of("priority"), LeadEntity::setPriority),
     SOURCE(List.of("source","lead source"), LeadEntity::setSource),
-    REQUIREMENT_CATEGORY(List.of("requirement","requirement category","category"), LeadEntity::setRequirementCategory),
-    TAGS(List.of("tags","tag"), LeadEntity::setTags),
+    REQUIREMENT_CATEGORY(List.of("requirement","requirement category","category"), LeadEntity::applyRequirementCategoriesFromRaw),    TAGS(List.of("tags","tag"), LeadEntity::setTags),
     NOTES(List.of("notes","remark","remarks"), LeadEntity::setNotes);
 
     public final List<String> synonyms;

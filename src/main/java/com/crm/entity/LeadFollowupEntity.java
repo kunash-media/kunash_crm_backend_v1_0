@@ -26,6 +26,12 @@ public class LeadFollowupEntity {
 
     private java.time.LocalDateTime createdAt;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "taken_by_staff_id")
+    private StaffEntity takenBy;
+
+    private String meetingType;  // in_office / online / phone_call / client_visit
+
     @PrePersist
     protected void onCreate() {
         this.createdAt = java.time.LocalDateTime.now();
@@ -55,5 +61,21 @@ public class LeadFollowupEntity {
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public StaffEntity getTakenBy() {
+        return takenBy;
+    }
+
+    public void setTakenBy(StaffEntity takenBy) {
+        this.takenBy = takenBy;
+    }
+
+    public String getMeetingType() {
+        return meetingType;
+    }
+
+    public void setMeetingType(String meetingType) {
+        this.meetingType = meetingType;
     }
 }

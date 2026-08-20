@@ -9,6 +9,9 @@ public class LeadFollowupResponseDto {
     private String followupStatus;
     private String followupNotes;
     private LocalDateTime createdAt;
+    private Long takenByStaffId;
+    private String takenByStaffName;
+    private String meetingType;
 
     public Long getFollowupPrimeId() { return followupPrimeId; }
     public void setFollowupPrimeId(Long followupPrimeId) { this.followupPrimeId = followupPrimeId; }
@@ -24,4 +27,13 @@ public class LeadFollowupResponseDto {
 
     public LocalDateTime getCreatedAt() { return createdAt; }
     public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+
+    public Long getTakenByStaffId() { return takenByStaffId; }
+    public void setTakenByStaffId(Long takenByStaffId) { this.takenByStaffId = takenByStaffId; }
+
+    public String getTakenByStaffName() { return takenByStaffName; }
+    public void setTakenByStaffName(String takenByStaffName) { this.takenByStaffName = takenByStaffName; }
+
+    public String getMeetingType() { return meetingType; }
+    public void setMeetingType(String meetingType) { this.meetingType = meetingType; }
 }

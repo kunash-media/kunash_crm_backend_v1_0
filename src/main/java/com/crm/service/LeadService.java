@@ -59,4 +59,7 @@ public interface LeadService {
 
     List<LeadSuggestionDto> searchLeadSuggestions(String query, int limit);
 
+    Page<LeadResponseDto> getLeadsByAssignedStaff(Long staffPrimeId, int page, int size);
+
+
 }

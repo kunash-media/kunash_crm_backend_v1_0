@@ -1,6 +1,7 @@
 package com.crm.dto.request;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class LeadRequestDto {
 
@@ -12,12 +13,15 @@ public class LeadRequestDto {
     private String status;
     private String priority;
     private String source;
-    private String requirementCategory;
+    private String referralDetails;
+    private List<String> requirementCategory;
     private String tags;
     private LocalDate followUpDate;
     private String followupStatus;
     private String notes;
     private Boolean leadConverted;
+
+    private Long assignedStaffId;
 
     public String getFirstName() { return firstName; }
     public void setFirstName(String firstName) { this.firstName = firstName; }
@@ -43,8 +47,13 @@ public class LeadRequestDto {
     public String getSource() { return source; }
     public void setSource(String source) { this.source = source; }
 
-    public String getRequirementCategory() { return requirementCategory; }
-    public void setRequirementCategory(String requirementCategory) { this.requirementCategory = requirementCategory; }
+    public List<String> getRequirementCategory() {
+        return requirementCategory;
+    }
+
+    public void setRequirementCategory(List<String> requirementCategory) {
+        this.requirementCategory = requirementCategory;
+    }
 
     public String getTags() { return tags; }
     public void setTags(String tags) { this.tags = tags; }
@@ -60,4 +69,20 @@ public class LeadRequestDto {
 
     public Boolean getLeadConverted() { return leadConverted; }
     public void setLeadConverted(Boolean leadConverted) { this.leadConverted = leadConverted; }
+
+    public Long getAssignedStaffId() {
+        return assignedStaffId;
+    }
+
+    public void setAssignedStaffId(Long assignedStaffId) {
+        this.assignedStaffId = assignedStaffId;
+    }
+
+    public String getReferralDetails() {
+        return referralDetails;
+    }
+
+    public void setReferralDetails(String referralDetails) {
+        this.referralDetails = referralDetails;
+    }
 }

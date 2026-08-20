@@ -5,12 +5,17 @@ import com.crm.dto.request.LeadRequestDto;
 import com.crm.dto.response.BulkUploadResult;
 import com.crm.dto.response.LeadFollowupResponseDto;
 import com.crm.dto.response.LeadResponseDto;
+import com.crm.dto.response.LeadSuggestionDto;
 import com.crm.dto.stats.MonthlyLeadCountDto;
 import com.crm.entity.LeadEntity;
 import com.crm.entity.LeadFollowupEntity;
+import com.crm.entity.LeadRequirementCategoryEntity;
+import com.crm.entity.StaffEntity;
 import com.crm.enum_status.LeadField;
+import com.crm.exception.StaffNotFoundException;
 import com.crm.repository.LeadFollowupRepository;
 import com.crm.repository.LeadRepository;
+import com.crm.repository.StaffRepository;
 import com.crm.service.LeadService;
 import com.crm.util.HeaderMapperService;
 import com.crm.util.LeadPhoneBloomFilterService;
@@ -25,9 +30,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.io.IOException;
 import java.io.UncheckedIOException;
@@ -47,13 +54,15 @@ public class LeadServiceImple implements LeadService {
 
     private final HeaderMapperService headerMapperService;
     private final LeadRowExtractor leadRowExtractor;
+    private final StaffRepository staffRepository;
 
 
     @Autowired
-    public LeadServiceImple(LeadRepository leadRepository, LeadFollowupRepository leadFollowupRepository, LeadPhoneBloomFilterService bloomFilterService, HeaderMapperService headerMapperService, LeadRowExtractor leadRowExtractor) {
+    public LeadServiceImple(LeadRepository leadRepository, LeadFollowupRepository leadFollowupRepository, LeadPhoneBloomFilterService bloomFilterService, StaffRepository staffRepository, HeaderMapperService headerMapperService, LeadRowExtractor leadRowExtractor) {
         this.leadRepository = leadRepository;
         this.leadFollowupRepository = leadFollowupRepository;
         this.bloomFilterService = bloomFilterService;
+        this.staffRepository = staffRepository;
         this.headerMapperService = headerMapperService;
         this.leadRowExtractor = leadRowExtractor;
     }
@@ -63,12 +72,13 @@ public class LeadServiceImple implements LeadService {
     @Transactional
     public LeadResponseDto createLead(LeadRequestDto dto, MultipartFile docFile) {
         if (leadRepository.existsByPhoneAndDeletedLeadFalse(dto.getPhone())) {
-            throw new org.springframework.web.server.ResponseStatusException(
-                    org.springframework.http.HttpStatus.CONFLICT, "A lead with this phone number already exists");
+            throw new ResponseStatusException(
+                    HttpStatus.CONFLICT, "A lead with this phone number already exists");
         }
-        if (dto.getEmail() != null && leadRepository.existsByEmailAndDeletedLeadFalse(dto.getEmail())) {
-            throw new org.springframework.web.server.ResponseStatusException(
-                    org.springframework.http.HttpStatus.CONFLICT, "A lead with this email already exists");
+        if (dto.getEmail() != null && !dto.getEmail().isBlank()
+                && leadRepository.existsByEmailAndDeletedLeadFalse(dto.getEmail())) {
+            throw new ResponseStatusException(
+                    HttpStatus.CONFLICT, "A lead with this email already exists");
         }
 
         LeadEntity entity = new LeadEntity();
@@ -86,13 +96,13 @@ public class LeadServiceImple implements LeadService {
                 .orElseThrow(() -> new RuntimeException("Lead not found with id: " + leadPrimeId));
 
         if (leadRepository.existsByPhoneAndDeletedLeadFalseAndLeadPrimeIdNot(dto.getPhone(), leadPrimeId)) {
-            throw new org.springframework.web.server.ResponseStatusException(
-                    org.springframework.http.HttpStatus.CONFLICT, "A lead with this phone number already exists");
+            throw new ResponseStatusException(
+                  HttpStatus.CONFLICT, "A lead with this phone number already exists");
         }
-        if (dto.getEmail() != null
+        if (dto.getEmail() != null && !dto.getEmail().isBlank()
                 && leadRepository.existsByEmailAndDeletedLeadFalseAndLeadPrimeIdNot(dto.getEmail(), leadPrimeId)) {
-            throw new org.springframework.web.server.ResponseStatusException(
-                    org.springframework.http.HttpStatus.CONFLICT, "A lead with this email already exists");
+            throw new ResponseStatusException(
+                    HttpStatus.CONFLICT, "A lead with this email already exists");
         }
 
         mapDtoToEntity(dto, entity);
@@ -220,6 +230,14 @@ public class LeadServiceImple implements LeadService {
         followup.setFollowupDate(dto.getFollowupDate());
         followup.setFollowupStatus(dto.getFollowupStatus());
         followup.setFollowupNotes(dto.getFollowupNotes());
+
+        followup.setMeetingType(dto.getMeetingType());
+        if (dto.getTakenByStaffId() != null) {
+            StaffEntity staff = staffRepository.findById(dto.getTakenByStaffId())
+                    .orElseThrow(() -> new StaffNotFoundException("Staff not found with id: " + dto.getTakenByStaffId()));
+            followup.setTakenBy(staff);
+        }
+
         leadFollowupRepository.save(followup);
 
         resyncLeadFromLatestFollowup(lead);
@@ -252,6 +270,14 @@ public class LeadServiceImple implements LeadService {
                     d.setFollowupStatus(f.getFollowupStatus());
                     d.setFollowupNotes(f.getFollowupNotes());
                     d.setCreatedAt(f.getCreatedAt());
+                    d.setMeetingType(f.getMeetingType());
+                    if (f.getTakenBy() != null) {
+                        d.setTakenByStaffId(f.getTakenBy().getStaffPrimeId());
+                        d.setTakenByStaffName(
+                                (f.getTakenBy().getStaffFirstName() == null ? "" : f.getTakenBy().getStaffFirstName())
+                                        + " "
+                                        + (f.getTakenBy().getStaffLastName() == null ? "" : f.getTakenBy().getStaffLastName()));
+                    }
                     return d;
                 })
                 .collect(Collectors.toList());
@@ -275,6 +301,14 @@ public class LeadServiceImple implements LeadService {
         followup.setFollowupDate(dto.getFollowupDate());
         followup.setFollowupStatus(dto.getFollowupStatus());
         followup.setFollowupNotes(dto.getFollowupNotes());
+
+        followup.setMeetingType(dto.getMeetingType());
+        if (dto.getTakenByStaffId() != null) {
+            StaffEntity staff = staffRepository.findById(dto.getTakenByStaffId())
+                    .orElseThrow(() -> new StaffNotFoundException("Staff not found with id: " + dto.getTakenByStaffId()));
+            followup.setTakenBy(staff);
+        }
+
         leadFollowupRepository.save(followup);
 
         resyncLeadFromLatestFollowup(lead);
@@ -324,6 +358,20 @@ public class LeadServiceImple implements LeadService {
         leadRepository.save(lead);
 
         log.info("Lead {} outcome set to '{}' (reason={})", leadPrimeId, normalizedOutcome, lead.getLostReason());
+    }
+
+    @Override
+    public Page<LeadResponseDto> getLeadsByAssignedStaff(Long staffPrimeId, int page, int size) {
+        log.info("Fetching leads assigned to staffPrimeId={}, page={}, size={}", staffPrimeId, page, size);
+
+        if (!staffRepository.existsById(staffPrimeId)) {
+            log.warn("Lead fetch by staff failed — staff not found for staffPrimeId={}", staffPrimeId);
+            throw new StaffNotFoundException("Staff not found with id: " + staffPrimeId);
+        }
+
+        Pageable pageable = PageRequest.of(Math.max(page, 0), Math.max(size, 1));
+        Page<LeadEntity> pageResult = leadRepository.findByAssignedStaff_StaffPrimeIdAndDeletedLeadFalse(staffPrimeId, pageable);
+        return pageResult.map(this::mapEntityToResponse);
     }
 
     @Override
@@ -434,7 +482,7 @@ public class LeadServiceImple implements LeadService {
     }
 
     @Override
-    public List<com.crm.dto.response.LeadSuggestionDto> searchLeadSuggestions(String query, int limit) {
+    public List<LeadSuggestionDto> searchLeadSuggestions(String query, int limit) {
         if (query == null || query.trim().length() < 2) {
             return java.util.Collections.emptyList();
         }
@@ -463,13 +511,30 @@ public class LeadServiceImple implements LeadService {
         entity.setStatus(dto.getStatus());
         entity.setPriority(dto.getPriority());
         entity.setSource(dto.getSource());
-        entity.setRequirementCategory(dto.getRequirementCategory());
+        entity.setReferralDetails(dto.getReferralDetails());
+        entity.getRequirementCategories().clear();
+        if (dto.getRequirementCategory() != null) {
+            for (String cat : dto.getRequirementCategory()) {
+                if (cat != null && !cat.isBlank()) {
+                    entity.getRequirementCategories().add(new LeadRequirementCategoryEntity(entity, cat.trim()));
+                }
+            }
+        }
         entity.setTags(dto.getTags());
         entity.setFollowUpDate(dto.getFollowUpDate());
         entity.setFollowupStatus(dto.getFollowupStatus());
         entity.setNotes(dto.getNotes());
         if (dto.getLeadConverted() != null) {
             entity.setLeadConverted(dto.getLeadConverted());
+        }
+
+        if (dto.getAssignedStaffId() != null) {
+            StaffEntity staff = staffRepository.findById(dto.getAssignedStaffId())
+                    .orElseThrow(() -> {
+                        log.warn("Lead assignment failed — staff not found for staffPrimeId={}", dto.getAssignedStaffId());
+                        return new StaffNotFoundException("Staff not found with id: " + dto.getAssignedStaffId());
+                    });
+            entity.setAssignedStaff(staff);
         }
 
     }
@@ -486,7 +551,12 @@ public class LeadServiceImple implements LeadService {
         res.setStatus(entity.getStatus());
         res.setPriority(entity.getPriority());
         res.setSource(entity.getSource());
-        res.setRequirementCategory(entity.getRequirementCategory());
+        res.setReferralDetails(entity.getReferralDetails());
+        res.setRequirementCategory(
+                entity.getRequirementCategories().stream()
+                        .map(LeadRequirementCategoryEntity::getCategory)
+                        .collect(Collectors.toList())
+        );
         res.setTags(entity.getTags());
         res.setFollowUpDate(entity.getFollowUpDate());
         res.setFollowupStatus(entity.getFollowupStatus());
@@ -502,6 +572,16 @@ public class LeadServiceImple implements LeadService {
         res.setUpdatedAt(entity.getUpdatedAt());
         res.setLeadOutcome(entity.getLeadOutcome());
         res.setLostReason(entity.getLostReason());
+
+        if (entity.getAssignedStaff() != null) {
+            res.setAssignedStaffId(entity.getAssignedStaff().getStaffPrimeId());
+            res.setAssignedStaffName(
+                    (entity.getAssignedStaff().getStaffFirstName() == null ? "" : entity.getAssignedStaff().getStaffFirstName())
+                            + " "
+                            + (entity.getAssignedStaff().getStaffLastName() == null ? "" : entity.getAssignedStaff().getStaffLastName())
+            );
+        }
+
         return res;
     }
 }

@@ -26,7 +26,11 @@ public class LeadEntity {
     private String status;              // hot / warm / cold
     private String priority;            // P1 / P2 / P3
     private String source;
-    private String requirementCategory;
+    private String referralDetails;
+
+    @OneToMany(mappedBy = "lead", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<LeadRequirementCategoryEntity> requirementCategories = new ArrayList<>();
+
     private String tags;
 
     private LocalDate followUpDate;
@@ -54,6 +58,11 @@ public class LeadEntity {
     @OneToMany(mappedBy = "lead", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<LeadFollowupEntity> followups = new ArrayList<>();
 
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "assigned_staff_id")
+    private StaffEntity assignedStaff;
+
     @PrePersist
     protected void onCreate() {
         this.createdAt = LocalDateTime.now();
@@ -68,6 +77,18 @@ public class LeadEntity {
     @PreUpdate
     protected void onUpdate() {
         this.updatedAt = LocalDateTime.now();
+    }
+
+
+    public void applyRequirementCategoriesFromRaw(String rawValue) {
+        if (rawValue == null || rawValue.isBlank()) return;
+        this.requirementCategories.clear();
+        for (String part : rawValue.split("[,;]")) {
+            String trimmed = part.trim();
+            if (!trimmed.isEmpty()) {
+                this.requirementCategories.add(new LeadRequirementCategoryEntity(this, trimmed));
+            }
+        }
     }
 
     // getters and setters
@@ -102,8 +123,13 @@ public class LeadEntity {
     public String getSource() { return source; }
     public void setSource(String source) { this.source = source; }
 
-    public String getRequirementCategory() { return requirementCategory; }
-    public void setRequirementCategory(String requirementCategory) { this.requirementCategory = requirementCategory; }
+    public List<LeadRequirementCategoryEntity> getRequirementCategories() {
+        return requirementCategories;
+    }
+
+    public void setRequirementCategories(List<LeadRequirementCategoryEntity> requirementCategories) {
+        this.requirementCategories = requirementCategories;
+    }
 
     public String getTags() { return tags; }
     public void setTags(String tags) { this.tags = tags; }
@@ -147,5 +173,21 @@ public class LeadEntity {
 
     public void setLostReason(String lostReason) {
         this.lostReason = lostReason;
+    }
+
+    public com.crm.entity.StaffEntity getAssignedStaff() {
+        return assignedStaff;
+    }
+
+    public void setAssignedStaff(com.crm.entity.StaffEntity assignedStaff) {
+        this.assignedStaff = assignedStaff;
+    }
+
+    public String getReferralDetails() {
+        return referralDetails;
+    }
+
+    public void setReferralDetails(String referralDetails) {
+        this.referralDetails = referralDetails;
     }
 }

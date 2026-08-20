@@ -2,6 +2,7 @@ package com.crm.dto.response;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class LeadResponseDto {
 
@@ -15,7 +16,8 @@ public class LeadResponseDto {
     private String status;
     private String priority;
     private String source;
-    private String requirementCategory;
+    private String referralDetails;
+    private List<String> requirementCategory;
     private String tags;
     private LocalDate followUpDate;
     private String followupStatus;
@@ -30,6 +32,10 @@ public class LeadResponseDto {
 
     private String leadOutcome; // null = open, "won", "lost" — independent of deletedLead
     private String lostReason; // only meaningful when leadOutcome = "lost"
+
+    private Long assignedStaffId;
+    private String assignedStaffName;
+
 
     public Long getLeadPrimeId() { return leadPrimeId; }
     public void setLeadPrimeId(Long leadPrimeId) { this.leadPrimeId = leadPrimeId; }
@@ -61,8 +67,14 @@ public class LeadResponseDto {
     public String getSource() { return source; }
     public void setSource(String source) { this.source = source; }
 
-    public String getRequirementCategory() { return requirementCategory; }
-    public void setRequirementCategory(String requirementCategory) { this.requirementCategory = requirementCategory; }
+
+    public List<String> getRequirementCategory() {
+        return requirementCategory;
+    }
+
+    public void setRequirementCategory(List<String> requirementCategory) {
+        this.requirementCategory = requirementCategory;
+    }
 
     public String getTags() { return tags; }
     public void setTags(String tags) { this.tags = tags; }
@@ -111,5 +123,29 @@ public class LeadResponseDto {
 
     public void setLostReason(String lostReason) {
         this.lostReason = lostReason;
+    }
+
+    public Long getAssignedStaffId() {
+        return assignedStaffId;
+    }
+
+    public void setAssignedStaffId(Long assignedStaffId) {
+        this.assignedStaffId = assignedStaffId;
+    }
+
+    public String getAssignedStaffName() {
+        return assignedStaffName;
+    }
+
+    public void setAssignedStaffName(String assignedStaffName) {
+        this.assignedStaffName = assignedStaffName;
+    }
+
+    public String getReferralDetails() {
+        return referralDetails;
+    }
+
+    public void setReferralDetails(String referralDetails) {
+        this.referralDetails = referralDetails;
     }
 }

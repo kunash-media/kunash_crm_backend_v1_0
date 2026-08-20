@@ -160,8 +160,13 @@ public class EmailServiceImpl implements EmailService {
     }
 
     private String requirementCategoryOrDefault(LeadEntity lead) {
-        return (lead.getRequirementCategory() != null && !lead.getRequirementCategory().trim().isEmpty())
-                ? lead.getRequirementCategory() : "General Enquiry";
+        if (lead.getRequirementCategories() == null || lead.getRequirementCategories().isEmpty()) {
+            return "General Enquiry";
+        }
+        return lead.getRequirementCategories().stream()
+                .map(com.crm.entity.LeadRequirementCategoryEntity::getCategory)
+                .filter(c -> c != null && !c.isBlank())
+                .collect(java.util.stream.Collectors.joining(", "));
     }
 
     private String buildSubject(EmailRequestDto request, LeadEntity lead) {

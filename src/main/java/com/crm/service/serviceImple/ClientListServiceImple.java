@@ -8,6 +8,7 @@ import com.crm.dto.stats.ClientStatsResponse;
 import com.crm.dto.stats.PendingPaymentAlertResponse;
 import com.crm.entity.ClientListEntity;
 import com.crm.entity.LeadEntity;
+import com.crm.entity.LeadRequirementCategoryEntity;
 import com.crm.repository.ClientListRepository;
 import com.crm.repository.LeadRepository;
 import com.crm.service.ClientListService;
@@ -103,7 +104,13 @@ public class ClientListServiceImple implements ClientListService {
         entity.setLastName(lead.getLastName());
         entity.setContact(lead.getPhone());
         entity.setEmail(lead.getEmail());
-        entity.setService(lead.getRequirementCategory());
+        entity.setService(
+                lead.getRequirementCategories() == null || lead.getRequirementCategories().isEmpty()
+                        ? null
+                        : lead.getRequirementCategories().stream()
+                        .map(LeadRequirementCategoryEntity::getCategory)
+                        .collect(Collectors.joining(", "))
+        );
         entity.setProject(lead.getCompany());
         entity.setSource(lead.getSource());
         entity.setSourceLeadId(lead.getLeadPrimeId());

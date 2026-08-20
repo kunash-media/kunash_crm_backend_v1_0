@@ -1,7 +1,6 @@
 package com.crm.config;
 
 import org.springframework.security.crypto.bcrypt.BCrypt;
-// Remove @Component - let BcryptAppConfig handle bean creation
 
 public class BcryptEncoderConfig {
 

@@ -181,6 +181,14 @@ public class LeadController {
         return ResponseEntity.ok(leadService.getLeadsByOutcome(outcome, page, size));
     }
 
+    @GetMapping("/by-staff/{staffPrimeId}")
+    public ResponseEntity<Page<LeadResponseDto>> getLeadsByAssignedStaff(
+            @PathVariable Long staffPrimeId,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "20") int size) {
+        log.info("GET /api/lead/v1/by-staff/{} — page={}, size={}", staffPrimeId, page, size);
+        return ResponseEntity.ok(leadService.getLeadsByAssignedStaff(staffPrimeId, page, size));
+    }
 
     //================ Bulk Api =================//
     @PostMapping(value = "/bulk-upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
@@ -195,5 +203,4 @@ public class LeadController {
             @RequestParam(defaultValue = "8") int limit) {
         return ResponseEntity.ok(leadService.searchLeadSuggestions(query, limit));
     }
-
 }
